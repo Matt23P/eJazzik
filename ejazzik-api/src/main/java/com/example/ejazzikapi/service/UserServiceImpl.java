@@ -1,42 +1,31 @@
 package com.example.ejazzikapi.service;
 
-import com.example.ejazzikapi.entity.ReservationEntity;
 import com.example.ejazzikapi.entity.UserEntity;
-import com.example.ejazzikapi.model.Reservation;
 import com.example.ejazzikapi.model.User;
-import com.example.ejazzikapi.repository.ReservationRepository;
 import com.example.ejazzikapi.repository.UserRepository;
 import com.example.ejazzikapi.request.user.LoginRequest;
 import com.example.ejazzikapi.request.user.SignUpRequest;
 import com.example.ejazzikapi.response.user.LoginResponse;
 import com.example.ejazzikapi.response.user.StatusResponse;
-import com.example.ejazzikapi.response.user.UserReservationsResponse;
-import com.example.ejazzikapi.utils.Mapper;
 import com.example.ejazzikapi.utils.Validator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.stream.Collectors;
 
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
     protected final Logger logger = Logger.getLogger(getClass().getName());
     @Autowired
     private UserRepository userRepository;
     @Autowired
-    private ReservationRepository reservationRepository;
-    @Autowired
     private PasswordEncoder passwordEncoder;
     @Autowired
     private Validator validator;
-    @Autowired
-    private Mapper mapper;
 
     @Override
     public StatusResponse signUpNewUser(SignUpRequest createNewSignUpRequest) {
@@ -87,23 +76,28 @@ public class UserServiceImpl implements UserService{
     @Override
     public LoginResponse login(LoginRequest loginRequest) {
         if (userRepository.existsByEmail(loginRequest.getEmail())) {
-            UserEntity userEntity = userRepository.findByEmail(loginRequest.getEmail());
-            String pwd = loginRequest.getPassword();
-            String encodedPwd = userEntity.getPassword();
-            if (passwordEncoder.matches(pwd, encodedPwd)) {
-                User user = new User(
-                        userEntity.getUserId(),
-                        userEntity.getFirstName(),
-                        userEntity.getLastName(),
-                        userEntity.getEmail(),
-                        userEntity.getPhoneNumber(),
-                        userEntity.getCreationDate()
-                );
-                logger.log(Level.INFO, "Login success");
-                return new LoginResponse(true, null, user);
-            } else {
-                logger.log(Level.INFO, "Wrong email or password");
-                return new LoginResponse(false, "Wrong email or password", null);
+            try {
+                UserEntity userEntity = userRepository.findByEmail(loginRequest.getEmail());
+                String pwd = loginRequest.getPassword();
+                String encodedPwd = userEntity.getPassword();
+                if (passwordEncoder.matches(pwd, encodedPwd)) {
+                    User user = new User(
+                            userEntity.getUserId(),
+                            userEntity.getFirstName(),
+                            userEntity.getLastName(),
+                            userEntity.getEmail(),
+                            userEntity.getPhoneNumber(),
+                            userEntity.getCreationDate()
+                    );
+                    logger.log(Level.INFO, "Login success");
+                    return new LoginResponse(true, null, user);
+                } else {
+                    logger.log(Level.INFO, "Wrong email or password");
+                    return new LoginResponse(false, "Wrong email or password", null);
+                }
+            } catch (Exception e) {
+                logger.log(Level.SEVERE, "Error while getting the user from DB " + e.getMessage());
+                return new LoginResponse(false, "Service unavailable, please try again later", null);
             }
         } else {
             logger.log(Level.INFO, "No user with this email found");
@@ -188,28 +182,6 @@ public class UserServiceImpl implements UserService{
         } else {
             logger.log(Level.INFO, "No user with this ID");
             return new StatusResponse(Collections.singletonList("No such user"), false);
-        }
-    }
-
-    @Override
-    public UserReservationsResponse getAllUserReservations(Integer userId) {
-        if (userRepository.existsById(userId)) {
-            try {
-                List<ReservationEntity> reservationEntities = reservationRepository.findAllByUserId(userId);
-                if (reservationEntities.isEmpty()) {
-                    return new UserReservationsResponse(Collections.emptyList(), false);
-                } else {
-                    List<Reservation> userReservations = new ArrayList<>(reservationEntities.size());
-                    reservationEntities.stream().map(mapper::mapToReservation).collect(Collectors.toList());
-                    return new UserReservationsResponse(userReservations, true);
-                }
-            } catch (Exception e) {
-                logger.log(Level.INFO, "Error while fetching user reservations " + e.getMessage());
-                return new UserReservationsResponse(Collections.emptyList(), false);
-            }
-        } else {
-            logger.log(Level.INFO, "No user with ID " + userId);
-            return new UserReservationsResponse(null, false);
         }
     }
 

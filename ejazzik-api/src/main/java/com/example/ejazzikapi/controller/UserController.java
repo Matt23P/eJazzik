@@ -4,7 +4,7 @@ import com.example.ejazzikapi.request.user.LoginRequest;
 import com.example.ejazzikapi.request.user.SignUpRequest;
 import com.example.ejazzikapi.response.user.LoginResponse;
 import com.example.ejazzikapi.response.user.StatusResponse;
-import com.example.ejazzikapi.response.user.UserReservationsResponse;
+import com.example.ejazzikapi.response.reservation.UserReservationsResponse;
 import com.example.ejazzikapi.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -78,9 +78,4 @@ public class UserController {
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping(path = "/reservations/{userId}")
-    public ResponseEntity<UserReservationsResponse> getAllUserReservations(@PathVariable("userId") Integer userId) {
-        UserReservationsResponse response = userService.getAllUserReservations(userId);
-        return ResponseEntity.ok(response);
-    }
 }
