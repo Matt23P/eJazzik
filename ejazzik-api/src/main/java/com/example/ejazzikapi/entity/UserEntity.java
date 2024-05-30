@@ -5,12 +5,14 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 @Builder
 @Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "users")
@@ -36,5 +38,5 @@ public class UserEntity {
     private String phoneNumber;
 
     @Column(name = "creationDate")
-    private Date creationDate;
+    private LocalDate creationDate;
 }
