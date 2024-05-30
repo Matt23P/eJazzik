@@ -1,7 +1,10 @@
+import Header from "@/components/global/header";
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      eJazzik
+      <main className="relative min-h-screen flex flex-col bg-white w-full">
+          <Header />
+            eJazzik
     </main>
   );
 }
