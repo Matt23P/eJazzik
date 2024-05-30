@@ -13,6 +13,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static com.example.ejazzikapi.utils.Constants.EMAIL_REGEX;
+import static com.example.ejazzikapi.utils.Constants.PHONE_REGEX;
 
 public class Validator {
     protected final Logger logger = Logger.getLogger(getClass().getName());
@@ -32,18 +33,66 @@ public class Validator {
         if (emailValidationErr != null) {
             errors.add(emailValidationErr);
         }
+        // is length of firstname/lastname proper?
+        String firstNameValidationErr = validateName(signUpRequest.getFirstName(), signUpRequest.getLastName());
+        if (firstNameValidationErr != null) {
+            errors.add(firstNameValidationErr);
+        }
 
+        String phoneNumberValidationErr = validatePhoneNumber(signUpRequest.getPhoneNumber());
+        if (phoneNumberValidationErr != null) {
+            errors.add(phoneNumberValidationErr);
+        }
 
+        String passwordValidationErr = validatePassword(signUpRequest.getPassword());
+        if (passwordValidationErr != null) {
+            errors.add(passwordValidationErr);
+        }
 
         return errors;
     }
 
     public String validateEmail(String email) {
-        Pattern patternEmail = Pattern.compile(EMAIL_REGEX);
-        Matcher emailMatcher = patternEmail.matcher(email);
-        if (!emailMatcher.matches()) {
-            logger.log(Level.INFO, "Invalid email");
-            return "Invalid email - it does not look like email sus.";
+        if (email == null || email.isEmpty() || email.length() > 128) {
+            return "Email address cannot be empty and shorter that 128 characters.";
+        } else {
+            Pattern patternEmail = Pattern.compile(EMAIL_REGEX);
+            Matcher emailMatcher = patternEmail.matcher(email);
+            if (!emailMatcher.matches()) {
+                logger.log(Level.INFO, "Invalid email");
+                return "Invalid email - it does not look like email sus.";
+            } else {
+                return null;
+            }
+        }
+    }
+
+    public String validateName(String name, String lastName) {
+        if (name == null || name.isEmpty() || name.length() > 128 || lastName == null || lastName.isEmpty() || lastName.length() > 128) {
+            return "First name and last name must be shorter than 128 characters.";
+        } else {
+            return null;
+        }
+    }
+
+    public String validatePhoneNumber(String phoneNumber) {
+        if (phoneNumber == null || phoneNumber.isEmpty()) {
+            return "Phone number cannot be empty.";
+        } else {
+            Pattern patternPhone = Pattern.compile(PHONE_REGEX);
+            Matcher emailMatcher = patternPhone.matcher(phoneNumber);
+            if (!emailMatcher.matches()) {
+                logger.log(Level.INFO, "Invalid email");
+                return "Invalid email - it does not look like email sus.";
+            } else {
+                return null;
+            }
+        }
+    }
+
+    public String validatePassword(String password) {
+        if (password == null || password.isEmpty()) {
+            return "Password cannot be empty.";
         } else {
             return null;
         }
