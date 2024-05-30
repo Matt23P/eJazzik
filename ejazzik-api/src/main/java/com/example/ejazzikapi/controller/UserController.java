@@ -2,8 +2,9 @@ package com.example.ejazzikapi.controller;
 
 import com.example.ejazzikapi.request.user.LoginRequest;
 import com.example.ejazzikapi.request.user.SignUpRequest;
-import com.example.ejazzikapi.response.LoginResponse;
-import com.example.ejazzikapi.response.StatusResponse;
+import com.example.ejazzikapi.response.user.LoginResponse;
+import com.example.ejazzikapi.response.user.StatusResponse;
+import com.example.ejazzikapi.response.user.UserReservationsResponse;
 import com.example.ejazzikapi.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -74,6 +75,12 @@ public class UserController {
     public ResponseEntity<StatusResponse> updatePassword (@PathVariable("newPwd") String newPwd,
                                                              @PathVariable("userId") Integer userId) {
         StatusResponse response = userService.changeUserPassword(newPwd, userId);
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping(path = "/reservations/{userId}")
+    public ResponseEntity<UserReservationsResponse> getAllUserReservations(@PathVariable("userId") Integer userId) {
+        UserReservationsResponse response = userService.getAllUserReservations(userId);
         return ResponseEntity.ok(response);
     }
 }
