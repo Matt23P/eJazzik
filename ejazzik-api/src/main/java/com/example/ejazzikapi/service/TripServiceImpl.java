@@ -7,11 +7,13 @@ import com.example.ejazzikapi.response.trip.AvailableTripsResponse;
 import com.example.ejazzikapi.utils.Mapper;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+@Service
 public class TripServiceImpl implements TripService {
     private static final org.slf4j.Logger log = LoggerFactory.getLogger(TripServiceImpl.class);
     protected final Logger logger = Logger.getLogger(getClass().getName());
@@ -34,6 +36,18 @@ public class TripServiceImpl implements TripService {
         } catch (Exception e) {
             logger.log(Level.SEVERE, "Error while getting available trips " + e.getMessage());
             return new AvailableTripsResponse(null, false);
+        }
+    }
+
+    @Override
+    public Trip getTripById(Integer tripId) {
+        if (tripRepository.existsById(tripId)) {
+            TripEntity tripEntity = tripRepository.findById(tripId).get();
+            logger.log(Level.INFO, "Trip with ID " + tripId + " found " + tripEntity.toString());
+            return mapper.mapToTrip(tripEntity);
+        } else {
+            logger.log(Level.INFO, "No trip found with id " + tripId);
+            return null;
         }
     }
 }

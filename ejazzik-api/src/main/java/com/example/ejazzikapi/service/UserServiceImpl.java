@@ -6,10 +6,11 @@ import com.example.ejazzikapi.repository.UserRepository;
 import com.example.ejazzikapi.request.user.LoginRequest;
 import com.example.ejazzikapi.request.user.SignUpRequest;
 import com.example.ejazzikapi.response.user.LoginResponse;
-import com.example.ejazzikapi.response.user.StatusResponse;
+import com.example.ejazzikapi.response.StatusResponse;
 import com.example.ejazzikapi.utils.Validator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.Collections;
@@ -17,6 +18,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+@Service
 public class UserServiceImpl implements UserService {
 
     protected final Logger logger = Logger.getLogger(getClass().getName());
