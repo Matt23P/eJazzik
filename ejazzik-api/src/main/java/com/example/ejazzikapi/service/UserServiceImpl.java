@@ -5,12 +5,12 @@ import com.example.ejazzikapi.model.User;
 import com.example.ejazzikapi.repository.UserRepository;
 import com.example.ejazzikapi.request.user.LoginRequest;
 import com.example.ejazzikapi.request.user.SignUpRequest;
-import com.example.ejazzikapi.response.LoginResponse;
+import com.example.ejazzikapi.response.user.LoginResponse;
 import com.example.ejazzikapi.response.StatusResponse;
 import com.example.ejazzikapi.utils.Validator;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.Collections;
@@ -18,9 +18,9 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class UserServiceImpl implements UserService{
+@Service
+public class UserServiceImpl implements UserService {
 
-    private static final org.slf4j.Logger log = LoggerFactory.getLogger(UserServiceImpl.class);
     protected final Logger logger = Logger.getLogger(getClass().getName());
     @Autowired
     private UserRepository userRepository;
@@ -78,23 +78,28 @@ public class UserServiceImpl implements UserService{
     @Override
     public LoginResponse login(LoginRequest loginRequest) {
         if (userRepository.existsByEmail(loginRequest.getEmail())) {
-            UserEntity userEntity = userRepository.findByEmail(loginRequest.getEmail());
-            String pwd = loginRequest.getPassword();
-            String encodedPwd = userEntity.getPassword();
-            if (passwordEncoder.matches(pwd, encodedPwd)) {
-                User user = new User(
-                        userEntity.getUserId(),
-                        userEntity.getFirstName(),
-                        userEntity.getLastName(),
-                        userEntity.getEmail(),
-                        userEntity.getPhoneNumber(),
-                        userEntity.getCreationDate()
-                );
-                logger.log(Level.INFO, "Login success");
-                return new LoginResponse(true, null, user);
-            } else {
-                logger.log(Level.INFO, "Wrong email or password");
-                return new LoginResponse(false, "Wrong email or password", null);
+            try {
+                UserEntity userEntity = userRepository.findByEmail(loginRequest.getEmail());
+                String pwd = loginRequest.getPassword();
+                String encodedPwd = userEntity.getPassword();
+                if (passwordEncoder.matches(pwd, encodedPwd)) {
+                    User user = new User(
+                            userEntity.getUserId(),
+                            userEntity.getFirstName(),
+                            userEntity.getLastName(),
+                            userEntity.getEmail(),
+                            userEntity.getPhoneNumber(),
+                            userEntity.getCreationDate()
+                    );
+                    logger.log(Level.INFO, "Login success");
+                    return new LoginResponse(true, null, user);
+                } else {
+                    logger.log(Level.INFO, "Wrong email or password");
+                    return new LoginResponse(false, "Wrong email or password", null);
+                }
+            } catch (Exception e) {
+                logger.log(Level.SEVERE, "Error while getting the user from DB " + e.getMessage());
+                return new LoginResponse(false, "Service unavailable, please try again later", null);
             }
         } else {
             logger.log(Level.INFO, "No user with this email found");

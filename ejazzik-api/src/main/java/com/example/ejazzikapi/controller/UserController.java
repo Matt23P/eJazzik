@@ -2,7 +2,7 @@ package com.example.ejazzikapi.controller;
 
 import com.example.ejazzikapi.request.user.LoginRequest;
 import com.example.ejazzikapi.request.user.SignUpRequest;
-import com.example.ejazzikapi.response.LoginResponse;
+import com.example.ejazzikapi.response.user.LoginResponse;
 import com.example.ejazzikapi.response.StatusResponse;
 import com.example.ejazzikapi.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -76,4 +76,5 @@ public class UserController {
         StatusResponse response = userService.changeUserPassword(newPwd, userId);
         return ResponseEntity.ok(response);
     }
+
 }

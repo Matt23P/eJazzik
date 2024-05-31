@@ -1,4 +1,4 @@
-package com.example.ejazzikapi.response;
+package com.example.ejazzikapi.response.user;
 
 import com.example.ejazzikapi.model.User;
 import lombok.AllArgsConstructor;

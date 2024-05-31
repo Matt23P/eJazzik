@@ -1,5 +1,6 @@
 package com.example.ejazzikapi.utils;
 
+import com.example.ejazzikapi.repository.TripRepository;
 import com.example.ejazzikapi.repository.UserRepository;
 import com.example.ejazzikapi.request.user.SignUpRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,8 @@ public class Validator {
     protected final Logger logger = Logger.getLogger(getClass().getName());
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private TripRepository tripRepository;
 
 
     public List<String> signUpValidation(SignUpRequest signUpRequest) {
@@ -95,6 +98,17 @@ public class Validator {
             return "Password cannot be empty.";
         } else {
             return null;
+        }
+    }
+
+    public String checkExistenceOfTripAndUser(Integer tripId, Integer userId) {
+        if (userRepository.existsById(userId)) {
+            if (!tripRepository.existsById(tripId)) {
+                return "No trip found for id " + tripId;
+            }
+            return null;
+        } else {
+            return "No user with id " + userId + " exists.";
         }
     }
 }
