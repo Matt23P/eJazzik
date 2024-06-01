@@ -6,6 +6,7 @@ import com.example.ejazzikapi.response.reservation.UserReservationsResponse;
 import com.example.ejazzikapi.response.StatusResponse;
 import com.example.ejazzikapi.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,19 +23,19 @@ public class ReservationController {
     @Autowired
     private ReservationService reservationService;
 
-    @GetMapping(path = "/{userId}")
+    @GetMapping(path = "/{userId}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<UserReservationsResponse> getUserReservations(@PathVariable Integer userId) {
         UserReservationsResponse response = reservationService.getAllUserReservations(userId);
         return ResponseEntity.ok(response);
     }
 
-    @PostMapping(path = "/create")
+    @PostMapping(path = "/create", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<StatusResponse> createReservation(@RequestBody CreateReservationRequest request) {
         
         return null;
     }
 
-    @GetMapping(path = "/{reservationId}")
+    @GetMapping(path = "/{reservationId}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Reservation> createReservation(@PathVariable Integer reservationId) {
         Reservation reservation = reservationService.getReservationById(reservationId);
         return ResponseEntity.ok(reservation);

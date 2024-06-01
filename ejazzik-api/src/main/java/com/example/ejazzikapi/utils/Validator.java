@@ -74,7 +74,7 @@ public class Validator {
 
     public String validateName(String name, String lastName) {
         if (name == null || name.isEmpty() || name.length() > 128 || lastName == null || lastName.isEmpty() || lastName.length() > 128) {
-            return "First name and last name must be shorter than 128 characters.";
+            return "First name and last name must be defined and shorter than 128 characters.";
         } else {
             return null;
         }
