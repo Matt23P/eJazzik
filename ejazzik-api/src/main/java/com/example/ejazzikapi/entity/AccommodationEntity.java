@@ -31,7 +31,7 @@ public class AccommodationEntity {
     @Column(name = "address")
     private String address;
 
-    @Column(name = "maxPeople")
+    @Column(name = "maxpeople")
     private String maxPeople;
 
     @Column(name = "standard")
@@ -40,7 +40,7 @@ public class AccommodationEntity {
     @Column(name = "description")
     private String description;
 
-    @Column(name = "phoneNumber")
+    @Column(name = "phonenumber")
     private String phoneNumber;
 
     @Column(name = "price")

@@ -2,7 +2,10 @@ package com.example.ejazzikapi.repository;
 
 import com.example.ejazzikapi.entity.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -13,5 +16,8 @@ public interface UserRepository extends JpaRepository<UserEntity, Integer> {
     boolean existsByEmail(String email);
     boolean existsById(int id);
     void deleteById(int id);
-    void updateByUserId(int id, UserEntity user);
+
+    @Modifying
+    @Query("UPDATE UserEntity u SET u.firstName = :#{#user.firstName}, u.lastName = :#{#user.lastName}, u.email = :#{#user.email}, u.password = :#{#user.password}, u.phoneNumber = :#{#user.phoneNumber}, u.creationDate = :#{#user.creationDate} WHERE u.userId = :userId")
+    void updateByUserId(@Param("userId") int userId, @Param("user") UserEntity user);
 }

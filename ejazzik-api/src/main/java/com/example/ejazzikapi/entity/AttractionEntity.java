@@ -34,7 +34,7 @@ public class AttractionEntity {
     @Column(name = "address")
     private String address;
 
-    @Column(name = "phoneNumber")
+    @Column(name = "phonenumber")
     private String phoneNumber;
 
     @Column(name = "price")

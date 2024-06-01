@@ -25,19 +25,19 @@ public class FlightEntity {
     @Column(name = "id")
     private Integer flightId;
 
-    @Column(name = "airportDeparture")
+    @Column(name = "airportdeparture")
     private String airportDeparture;
 
-    @Column(name = "dateDeparture")
+    @Column(name = "datedeparture")
     private String dateDeparture;
 
-    @Column(name = "timeDeparture")
+    @Column(name = "timedeparture")
     private String timeDeparture;
 
     @Column(name = "carrier")
     private String carrier;
 
-    @Column(name = "airportArrival")
+    @Column(name = "airportarrival")
     private String airportArrival;
 
     @Column(name = "datearrival")

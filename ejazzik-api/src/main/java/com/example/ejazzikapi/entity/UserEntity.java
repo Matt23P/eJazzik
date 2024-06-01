@@ -22,10 +22,10 @@ public class UserEntity {
     @Column(name = "id")
     private Integer userId;
 
-    @Column(name = "firstName")
+    @Column(name = "firstname")
     private String firstName;
 
-    @Column(name = "lastName")
+    @Column(name = "lastname")
     private String lastName;
 
     @Column(name = "email")
@@ -34,9 +34,9 @@ public class UserEntity {
     @Column(name = "password")
     private String password;
 
-    @Column(name = "phoneNumber")
+    @Column(name = "phonenumber")
     private String phoneNumber;
 
-    @Column(name = "creationDate")
+    @Column(name = "creationdate")
     private LocalDate creationDate;
 }
