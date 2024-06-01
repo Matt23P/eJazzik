@@ -23,11 +23,13 @@ import com.example.ejazzikapi.repository.ParticipantRepository;
 import com.example.ejazzikapi.repository.TripAttractionRepository;
 import com.example.ejazzikapi.repository.TripRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+@Component
 public class Mapper {
 
     @Autowired
@@ -71,7 +73,7 @@ public class Mapper {
     }
 
     public Trip mapToTrip(TripEntity entity) {
-        AccommodationEntity accommodationEntity = accommodationRepository.findById(entity.getAccomodationId()).get();
+        AccommodationEntity accommodationEntity = accommodationRepository.findById(entity.getAccommodationId()).get();
         FlightEntity flightArrivalEntity = flightRepository.findById(entity.getFlightArrivalId()).get();
         FlightEntity flightDepartureEntity = flightRepository.findById(entity.getFlightDepartureId()).get();
         List<TripAttractionEntity> tripAttractionEntities = tripAttractionRepository.findAllByTripId(entity.getTripId());

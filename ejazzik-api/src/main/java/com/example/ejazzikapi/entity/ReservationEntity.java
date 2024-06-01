@@ -29,15 +29,15 @@ public class ReservationEntity {
     @Column(name = "id")
     private Integer reservationId;
 
-    @Column(name = "userId")
+    @Column(name = "userid")
     private Integer userId;
 
-    @Column(name = "attendantId")
+    @Column(name = "attendantid")
     private Integer attendantId;
 
-    @Column(name = "tripId")
+    @Column(name = "tripid")
     private Integer tripId;
 
-    @Column(name = "buyDate")
+    @Column(name = "buydate")
     private LocalDate buyDate;
 }

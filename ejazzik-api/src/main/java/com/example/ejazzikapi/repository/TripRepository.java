@@ -13,6 +13,6 @@ import java.util.List;
 public interface TripRepository extends JpaRepository<TripEntity, Integer> {
     TripEntity findById(int id);
 
-    @Query("SELECT t FROM trips t WHERE t.id NOT IN (SELECT r.trip.id FROM reservations r)")
+    @Query("SELECT t FROM TripEntity t WHERE t.tripId NOT IN (SELECT r.tripId FROM ReservationEntity r)")
     List<TripEntity> findAllAvailableTrips();
 }

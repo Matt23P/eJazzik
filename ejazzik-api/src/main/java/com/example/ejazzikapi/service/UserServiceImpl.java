@@ -31,7 +31,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public StatusResponse signUpNewUser(SignUpRequest createNewSignUpRequest) {
-        //TODO Validation segment WIP
         List<String> validationErrors = validator.signUpValidation(createNewSignUpRequest);
         if (validationErrors.isEmpty()) {
             try {
@@ -47,11 +46,12 @@ public class UserServiceImpl implements UserService {
                 logger.info("New user created");
                 return new StatusResponse(null, true);
             } catch (Exception e) {
-                logger.info("Error while creating new user: " + e.getMessage());
+                logger.log(Level.SEVERE,"Error while creating new user: " + e.getMessage());
                 return new StatusResponse(Collections.singletonList("Error while creating the user. Please try again later"),
                         false);
             }
         } else {
+            logger.info("Validation failed: " + validationErrors.toString());
             return new StatusResponse(validationErrors, false);
         }
     }

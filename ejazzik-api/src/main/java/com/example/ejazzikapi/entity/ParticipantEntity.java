@@ -27,24 +27,24 @@ public class ParticipantEntity {
     @Column(name = "id")
     private Integer participantId;
 
-    @Column(name = "reservationId")
+    @Column(name = "reservationid")
     private Integer reservationId;
 
-    @Column(name = "firstName")
+    @Column(name = "firstname")
     private String firstName;
 
-    @Column(name = "lastName")
+    @Column(name = "lastname")
     private String lastName;
 
     @Column(name = "pesel")
     private String pesel;
 
-    @Column(name = "birthDate")
+    @Column(name = "birthdate")
     private LocalDate birthDate;
 
     @Column(name = "email")
     private String email;
 
-    @Column(name = "passportNumber")
+    @Column(name = "passportnumber")
     private String passportNumber;
 }

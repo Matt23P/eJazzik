@@ -25,9 +25,9 @@ public class TripAttractionEntity {
     @Column(name = "id")
     private Integer participantId;
 
-    @Column(name = "tripId")
+    @Column(name = "tripid")
     private Integer tripId;
 
-    @Column(name = "attractionId")
+    @Column(name = "attractionid")
     private Integer attractionId;
 }

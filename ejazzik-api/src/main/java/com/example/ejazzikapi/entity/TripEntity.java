@@ -27,13 +27,13 @@ public class TripEntity {
     @Column(name = "id")
     private Integer tripId;
 
-    @Column(name = "accomodationId")
-    private Integer accomodationId;
+    @Column(name = "accommodationid")
+    private Integer accommodationId;
 
-    @Column(name = "flightDepartureId")
+    @Column(name = "flightdepartureid")
     private Integer flightDepartureId;
 
-    @Column(name = "flightArrivalId")
+    @Column(name = "flightarrivalid")
     private Integer flightArrivalId;
 
     @Column(name = "date")
@@ -51,10 +51,10 @@ public class TripEntity {
     @Column(name = "description")
     private String description;
 
-    @Column(name = "pricePerPerson")
+    @Column(name = "priceperperson")
     private double pricePerPerson;
 
-    @Column(name = "numberOfPeople")
+    @Column(name = "numberofpeople")
     private Integer numberOfPeople;
 
     @Column(name = "provision")

@@ -1,0 +1,124 @@
+-- Database: ejazzik
+
+-- DROP DATABASE IF EXISTS ejazzik;
+
+-- CREATE DATABASE ejazzik
+--     WITH
+--     OWNER = postgres
+--     ENCODING = 'UTF8'
+--     LC_COLLATE = 'Polish_Poland.1250'
+--     LC_CTYPE = 'Polish_Poland.1250'
+--     TABLESPACE = pg_default
+--     CONNECTION LIMIT = -1
+--     IS_TEMPLATE = False;
+
+DROP TABLE IF EXISTS participants CASCADE;
+DROP TABLE IF EXISTS reservations CASCADE;
+DROP TABLE IF EXISTS tripattractions CASCADE;
+DROP TABLE IF EXISTS trips CASCADE;
+DROP TABLE IF EXISTS accommodations CASCADE;
+DROP TABLE IF EXISTS attendants CASCADE;
+DROP TABLE IF EXISTS attractions CASCADE;
+DROP TABLE IF EXISTS flights CASCADE;
+DROP TABLE IF EXISTS users CASCADE;
+
+CREATE TABLE users (
+    id INT PRIMARY KEY,
+    firstName VARCHAR(255),
+    lastName VARCHAR(255),
+    email VARCHAR(255),
+    password VARCHAR(255),
+    phoneNumber VARCHAR(20),
+    creationDate DATE
+);
+
+CREATE TABLE accommodations (
+    id INT PRIMARY KEY,
+    name VARCHAR(255),
+    address VARCHAR(255),
+    maxPeople VARCHAR(255),
+    standard VARCHAR(255),
+    description TEXT,
+    phoneNumber VARCHAR(20),
+    price DOUBLE PRECISION
+);
+
+CREATE TABLE attendants (
+    id INT PRIMARY KEY,
+    firstName VARCHAR(255),
+    lastName VARCHAR(255),
+    email VARCHAR(255),
+    phoneNumber VARCHAR(20)
+);
+
+CREATE TABLE attractions (
+    id INT PRIMARY KEY,
+    name VARCHAR(255),
+    description TEXT,
+    address VARCHAR(255),
+    phoneNumber VARCHAR(20),
+    price DOUBLE PRECISION
+);
+
+CREATE TABLE flights (
+    id INT PRIMARY KEY,
+    airportDeparture VARCHAR(255),
+    dateDeparture VARCHAR(10),
+    timeDeparture VARCHAR(5),
+    carrier VARCHAR(255),
+    airportArrival VARCHAR(255),
+    datearrival VARCHAR(10),
+    timearrival VARCHAR(5),
+    luggage VARCHAR(255),
+    standard VARCHAR(255),
+    price DOUBLE PRECISION
+);
+
+CREATE TABLE trips (
+    id INT PRIMARY KEY,
+    accommodationId INT,
+    flightDepartureId INT,
+    flightArrivalId INT,
+    date VARCHAR(10),
+    city VARCHAR(255),
+    country VARCHAR(255),
+    name VARCHAR(255),
+    description TEXT,
+    pricePerPerson DOUBLE PRECISION,
+    numberOfPeople INT,
+    provision DOUBLE PRECISION,
+    FOREIGN KEY (accommodationId) REFERENCES accommodations(id),
+    FOREIGN KEY (flightDepartureId) REFERENCES flights(id),
+    FOREIGN KEY (flightArrivalId) REFERENCES flights(id)
+);
+
+CREATE TABLE reservations (
+    id INT PRIMARY KEY,
+    userId INT,
+    attendantId INT,
+    tripId INT,
+    buyDate DATE,
+    FOREIGN KEY (userId) REFERENCES users(id),
+    FOREIGN KEY (attendantId) REFERENCES attendants(id),
+    FOREIGN KEY (tripId) REFERENCES trips(id)
+);
+
+CREATE TABLE participants (
+    id INT PRIMARY KEY,
+    reservationId INT,
+    firstName VARCHAR(255),
+    lastName VARCHAR(255),
+    pesel VARCHAR(11),
+    birthDate DATE,
+    email VARCHAR(255),
+    passportNumber VARCHAR(20),
+    FOREIGN KEY (reservationId) REFERENCES reservations(id)
+);
+
+CREATE TABLE tripattractions (
+    id INT PRIMARY KEY,
+    tripId INT,
+    attractionId INT,
+    FOREIGN KEY (tripId) REFERENCES trips(id),
+    FOREIGN KEY (attractionId) REFERENCES attractions(id)
+);
