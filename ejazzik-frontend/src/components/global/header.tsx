@@ -25,9 +25,6 @@ const Header = () => {
           pullRight
           className="p-7 text-xl max-md:text-base md:flex max-md:hidden w-fit"
         >
-          <Nav.Item href={"/konto"} className="">
-            Konto
-          </Nav.Item>
           <Nav.Item href={"/"} className="">
             Strona główna
           </Nav.Item>
@@ -36,6 +33,12 @@ const Header = () => {
           </Nav.Item>
           <Nav.Item href={"/kontakt"} className="">
             Kontakt
+          </Nav.Item>
+          <Nav.Item href={"/konto"} className="">
+            Konto
+          </Nav.Item>
+          <Nav.Item href={"/zaloguj"} className="text-black hover:bg-none">
+            Zaloguj
           </Nav.Item>
         </Nav>
         <div className="md:hidden max-md:flex p-11">
@@ -54,15 +57,12 @@ const Header = () => {
       {mobileMenu && (
         <div
           className="md:hidden max-md:flex justify-center items-center h-[calc(100vh-112px)] mobileMenu"
-          style={{ backgroundColor: "#f3e9d9" }}
+          style={{ backgroundColor: "#f3e9d9", zIndex: -1 }}
         >
           <Nav
             vertical
             className="flex flex-col text-xl gap-5 mt-[-100px] text-center items-center"
           >
-            <Nav.Item href={"/konto"} className="text-black hover:bg-none">
-              Konto
-            </Nav.Item>
             <Nav.Item href={"/"} className="text-black hover:bg-none">
               Strona główna
             </Nav.Item>
@@ -71,6 +71,12 @@ const Header = () => {
             </Nav.Item>
             <Nav.Item href={"/kontakt"} className="text-black">
               Kontakt
+            </Nav.Item>
+            <Nav.Item href={"/konto"} className="text-black hover:bg-none">
+              Konto
+            </Nav.Item>
+            <Nav.Item href={"/zaloguj"} className="text-black hover:bg-none">
+              Zaloguj
             </Nav.Item>
           </Nav>
         </div>
