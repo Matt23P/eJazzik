@@ -75,7 +75,7 @@ public class ReservationServiceImpl implements ReservationService{
             reservationRepository.save(reservationEntity);
             Integer reservationId = reservationRepository.findByTripId(request.getTripId()).getReservationId();
             for (ParticipantInfo part : request.getParticipants()) {
-                participantRepository.save(mapper.mapParticipantToEntity(part, reservationId));
+                participantRepository.save(mapper.mapParticipantInfoToEntity(part, reservationId));
             }
             return new StatusResponse(null, true);
         } catch (Exception e) {

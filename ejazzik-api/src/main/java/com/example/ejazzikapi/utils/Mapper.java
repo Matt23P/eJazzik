@@ -48,7 +48,7 @@ public class Mapper {
     @Autowired
     private AttractionRepository attractionRepository;
 
-    public ParticipantEntity mapParticipantToEntity(ParticipantInfo participant, Integer reservationId) {
+    public ParticipantEntity mapParticipantInfoToEntity(ParticipantInfo participant, Integer reservationId) {
         ParticipantEntity participantEntity = new ParticipantEntity();
         participantEntity.setFirstName(participant.getFistName());
         participantEntity.setLastName(participant.getLastName());
@@ -57,6 +57,19 @@ public class Mapper {
         participantEntity.setPassportNumber(participant.getPassportNumber());
         participantEntity.setBirthDate(participant.getBirthDate());
         participantEntity.setReservationId(reservationId);
+        return participantEntity;
+    }
+
+    public ParticipantEntity mapParticipantToEntity(Participant participant) {
+        ParticipantEntity participantEntity = new ParticipantEntity();
+        participantEntity.setFirstName(participant.getFistName());
+        participantEntity.setLastName(participant.getLastName());
+        participantEntity.setEmail(participant.getEmail());
+        participantEntity.setPesel(participant.getPesel());
+        participantEntity.setPassportNumber(participant.getPassportNumber());
+        participantEntity.setBirthDate(participant.getBirthDate());
+        participantEntity.setReservationId(participant.getReservationId());
+        participantEntity.setParticipantId(participantEntity.getParticipantId());
         return participantEntity;
     }
 
