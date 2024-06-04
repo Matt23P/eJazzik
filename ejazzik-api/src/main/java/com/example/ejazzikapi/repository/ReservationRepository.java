@@ -10,5 +10,6 @@ import java.util.List;
 @EnableJpaRepositories
 @Repository
 public interface ReservationRepository extends JpaRepository<ReservationEntity, Integer> {
-    List<ReservationEntity> findAllByUserId(int userId);
+    List<ReservationEntity> findAllByUserId(Integer userId);
+    ReservationEntity findByTripId(Integer tripId);
 }

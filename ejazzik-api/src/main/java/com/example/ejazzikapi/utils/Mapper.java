@@ -22,6 +22,7 @@ import com.example.ejazzikapi.repository.FlightRepository;
 import com.example.ejazzikapi.repository.ParticipantRepository;
 import com.example.ejazzikapi.repository.TripAttractionRepository;
 import com.example.ejazzikapi.repository.TripRepository;
+import com.example.ejazzikapi.request.reservation.ParticipantInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -46,6 +47,18 @@ public class Mapper {
     private TripAttractionRepository tripAttractionRepository;
     @Autowired
     private AttractionRepository attractionRepository;
+
+    public ParticipantEntity mapParticipantToEntity(ParticipantInfo participant, Integer reservationId) {
+        ParticipantEntity participantEntity = new ParticipantEntity();
+        participantEntity.setFirstName(participant.getFistName());
+        participantEntity.setLastName(participant.getLastName());
+        participantEntity.setEmail(participant.getEmail());
+        participantEntity.setPesel(participant.getPesel());
+        participantEntity.setPassportNumber(participant.getPassportNumber());
+        participantEntity.setBirthDate(participant.getBirthDate());
+        participantEntity.setReservationId(reservationId);
+        return participantEntity;
+    }
 
     public Reservation mapToReservation(ReservationEntity entity) {
         List<ParticipantEntity> participantEntities = participantRepository.findAllByReservationId(entity.getReservationId());

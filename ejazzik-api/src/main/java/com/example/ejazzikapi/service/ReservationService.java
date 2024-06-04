@@ -9,4 +9,5 @@ public interface ReservationService {
     UserReservationsResponse getAllUserReservations(Integer userId);
     StatusResponse createNewReservation(CreateReservationRequest request);
     Reservation getReservationById(Integer id);
+    StatusResponse deleteReservation(Integer id);
 }

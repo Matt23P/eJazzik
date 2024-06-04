@@ -9,9 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -31,13 +33,21 @@ public class ReservationController {
 
     @PostMapping(path = "/create", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<StatusResponse> createReservation(@RequestBody CreateReservationRequest request) {
-        
-        return null;
+        StatusResponse response = reservationService.createNewReservation(request);
+        return ResponseEntity.ok(response);
     }
 
     @GetMapping(path = "/{reservationId}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Reservation> createReservation(@PathVariable Integer reservationId) {
-        Reservation reservation = reservationService.getReservationById(reservationId);
-        return ResponseEntity.ok(reservation);
+    public ResponseEntity<Reservation> findReservationById(@PathVariable Integer reservationId) {
+        Reservation response = reservationService.getReservationById(reservationId);
+        return ResponseEntity.ok(response);
     }
+
+    @DeleteMapping(path = "/{reservationId}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<StatusResponse> deleteReservation(@PathVariable Integer reservationId) {
+        StatusResponse response = reservationService.deleteReservation(reservationId);
+        return ResponseEntity.ok(response);
+    }
+
+
 }

@@ -11,5 +11,5 @@ import java.util.List;
 @Repository
 public interface ParticipantRepository extends JpaRepository<ParticipantEntity, Integer> {
     ParticipantEntity findById(int id);
-    List<ParticipantEntity> findAllByReservationId(int reservationId);
+    List<ParticipantEntity> findAllByReservationId(Integer reservationId);
 }
