@@ -1,0 +1,367 @@
+-- ACCOMMODATIONS
+
+INSERT INTO accommodations (
+	id,name,address,maxpeople,standard,
+	description,phonenumber,price
+) VALUES (
+	1,
+    'Sky Apartments',
+    'Ruga Egnatia 12, Durres',
+    '10',
+    'high',
+    'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
+    '111222333',
+    120.00
+);
+
+INSERT INTO accommodations (
+	id,name,address,maxpeople,standard,
+	description,phonenumber,price
+) VALUES (
+	2,
+    'Sunny Villa',
+    'Cleopatra avenue 2, Kair',
+    '6',
+    'luxurious',
+    'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
+    '333222111',
+    215.00
+);
+
+INSERT INTO accommodations (
+	id,name,address,maxpeople,standard,
+	description,phonenumber,price
+) VALUES (
+	3,
+    'Mad Man Cabin',
+    'Lone Island Street 746, Denpasar',
+    '8',
+    'medium',
+    'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
+    '888999777',
+    100.00
+);
+
+INSERT INTO accommodations (
+	id,name,address,maxpeople,standard,
+	description,phonenumber,price
+) VALUES (
+	4,
+    'Sea View Mansion',
+    'Pacific Coast Hwy 13/78, Los Angeles',
+    '8',
+    'luxurious',
+    'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
+    '123123123',
+    250.00
+);
+
+INSERT INTO accommodations (
+	id,name,address,maxpeople,standard,
+	description,phonenumber,price
+) VALUES (
+	5,
+    'Adventure`s Lair',
+    'Lima Barreto 90, Rio De Janerio',
+    '7',
+    'high',
+    'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
+    '555666777',
+    167.00
+);
+
+-- ATTENDANTS
+
+INSERT INTO attendants (
+	id,firstname,lastname,
+    email,phonenumber
+) VALUES (
+	1,
+    'Michał',
+    'Oczlando',
+    'm.oczlando@ejazzik.com',
+    '123123123'
+);
+
+INSERT INTO attendants (
+	id,firstname,lastname,
+    email,phonenumber
+) VALUES (
+	2,
+    'Piotr',
+    'Jazz',
+    'p.jazz@ejazzik.com',
+    '456456456'
+);
+
+INSERT INTO attendants (
+	id,firstname,lastname,
+    email,phonenumber
+) VALUES (
+	3,
+    'Maciej',
+    'Draszka',
+    'm.draszka@ejazzik.com',
+    '789789789'
+);
+
+INSERT INTO attendants (
+	id,firstname,lastname,
+    email,phonenumber
+) VALUES (
+	4,
+    'Jacob',
+    'Ramič',
+    'j.ramic@ejazzik.com',
+    '852852852'
+);
+
+-- FLIGHTS
+
+INSERT INTO flights (
+	id,airportdeparture,datedeparture,timedeparture,carrier,
+	airportarrival,datearrival,timearrival,luggage,standard,price
+) VALUES (
+	1,
+    'Chopin Airport Warsaw',
+    '15.07.2024',
+    '19:00',
+    'WIZZ AIR',
+	'Kair Airport',
+	'16.07.2024',
+	'6:00',
+	'hand luggage + one 10kg suitcase',
+	'economic',
+	50.00
+);
+
+INSERT INTO flights (
+	id,airportdeparture,datedeparture,timedeparture,carrier,
+	airportarrival,datearrival,timearrival,luggage,standard,price
+) VALUES (
+	2,
+    'Kair Airport',
+    '24.07.2024',
+    '15:00',
+    'WIZZ AIR',
+	'Modlin Airport Warsaw',
+	'24.07.2024',
+	'20:00',
+	'hand luggage + one 10kg suitcase',
+	'economic',
+	45.99
+);
+
+
+INSERT INTO flights (
+	id,airportdeparture,datedeparture,timedeparture,carrier,
+	airportarrival,datearrival,timearrival,luggage,standard,price
+) VALUES (
+	3,
+    'Lublinek Łódź Airport',
+    '09.08.2024',
+    '13:00',
+    'Ryan Air',
+	'Tirana Airport',
+	'09.08.2024',
+	'16:00',
+	'hand luggage + one 20kg suitcase',
+	'business',
+	65.00
+);
+
+INSERT INTO flights (
+	id,airportdeparture,datedeparture,timedeparture,carrier,
+	airportarrival,datearrival,timearrival,luggage,standard,price
+) VALUES (
+	4,
+    'Tirana Airport',
+    '23.08.2024',
+    '16:00',
+    'WIZZ AIR',
+	'John Paul II Airport Kraków',
+	'23.08.2024',
+	'20:00',
+	'hand luggage + one 20kg suitcase',
+	'economic',
+	25.00
+);
+
+INSERT INTO flights (
+	id,airportdeparture,datedeparture,timedeparture,carrier,
+	airportarrival,datearrival,timearrival,luggage,standard,price
+) VALUES (
+	5,
+    'Lech Wałęsa International Airport Gdańsk',
+    '21.07.2024',
+    '09:00',
+    'LOT',
+	'International Airport Los Angeles',
+	'22.07.2024',
+	'08:00',
+	'hand luggage + one 20kg suitcase',
+	'first class',
+	600.00
+);
+
+INSERT INTO flights (
+	id,airportdeparture,datedeparture,timedeparture,carrier,
+	airportarrival,datearrival,timearrival,luggage,standard,price
+) VALUES (
+	6,
+    'International Airport Los Angeles',
+    '08.09.2024',
+    '12:00',
+    'American Airlines',
+	'Lech Wałęsa International Airport Gdańsk',
+	'09.09.2024',
+	'13:30',
+	'hand luggage + one 35kg suitcase',
+	'economic',
+	455.00
+);
+
+-- ATTRACTIONS
+
+INSERT INTO attractions (
+	id,name,description,address,phonenumber,price
+) VALUES (
+	1,
+    'Ski Jet Ride',
+    'lorem ipsum duration etc',
+    'Ruga Avedicii 13, Durres',
+	'123123123',
+    50.00
+);
+
+INSERT INTO attractions (
+	id,name,description,address,phonenumber,price
+) VALUES (
+	2,
+    'Paintball',
+    'lorem ipsum duration etc',
+    'Ruga Militarie 67, Golem',
+	'789789789',
+    25.00
+);
+
+INSERT INTO attractions (
+	id,name,description,address,phonenumber,price
+) VALUES (
+	3,
+    'Disco - Makarena Club',
+    'lorem ipsum duration etc',
+    'Ruga Avedicii 45, Durres',
+	'852852852',
+    10.00
+);
+
+INSERT INTO attractions (
+	id,name,description,address,phonenumber,price
+) VALUES (
+	4,
+    'Helicopter flight - Hugo Raves',
+    'lorem ipsum duration etc',
+    'Platze Pilote 3, Durres',
+	'555666222',
+    80.00
+);
+
+INSERT INTO attractions (
+	id,name,description,address,phonenumber,price
+) VALUES (
+	5,
+    'Camel Riding with People Of Desert',
+    'lorem ipsum duration etc',
+    'Tutenhamon Street 7, Kair',
+	'963963963',
+    30.00
+);
+
+INSERT INTO attractions (
+	id,name,description,address,phonenumber,price
+) VALUES (
+	6,
+    'Quad race of the shore of Nile river',
+    'lorem ipsum duration etc',
+    'Nile Street 67, Kair',
+	'159159159',
+    85.00
+);
+
+INSERT INTO attractions (
+	id,name,description,address,phonenumber,price
+) VALUES (
+	7,
+    'Scuba diving with dolphins',
+    'lorem ipsum duration etc',
+    'Desert Boulevard 3, Kair',
+	'753753753',
+    25.00
+);
+
+INSERT INTO attractions (
+	id,name,description,address,phonenumber,price
+) VALUES (
+	8,
+    'Casino Night',
+    'lorem ipsum duration etc',
+    '1000 Redondo Beach Blvd, Los Angelos',
+	'310719980',
+    300.00
+);
+
+INSERT INTO attractions (
+	id,name,description,address,phonenumber,price
+) VALUES (
+	9,
+    'Basketball training with Marcin Gortat',
+    'lorem ipsum duration etc',
+    '1708-1798 Ocean Front Walk, Los Angelos',
+	'696858721',
+    125.00
+);
+
+INSERT INTO attractions (
+	id,name,description,address,phonenumber,price
+) VALUES (
+	10,
+    'Day in Malibu',
+    'lorem ipsum duration etc',
+    '5788-5776 Adams Blvd, Los Angelos',
+	'696858721',
+    200.00
+);
+
+INSERT INTO attractions (
+	id,name,description,address,phonenumber,price
+) VALUES (
+	11,
+    'Day in Hollywood with guide - Marvin Santos',
+    'lorem ipsum duration etc',
+    '5525 Santa Monica Blvd, Los Angelos',
+	'696858721',
+    300.00
+);
+
+INSERT INTO attractions (
+	id,name,description,address,phonenumber,price
+) VALUES (
+	12,
+    'The Museum of Contemporary Art',
+    'lorem ipsum duration etc',
+    '250 S Grand Ave, Los Angelos',
+	'850129635',
+    20.00
+);
+
+INSERT INTO attractions (
+	id,name,description,address,phonenumber,price
+) VALUES (
+	13,
+    'Academy Museum of Motion Pictures',
+    'lorem ipsum duration etc',
+    '6067 Wilshire Blvd, Los Angelos',
+	'850129635',
+    25.00
+);
