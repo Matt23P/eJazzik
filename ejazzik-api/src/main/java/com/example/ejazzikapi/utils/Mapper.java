@@ -26,6 +26,8 @@ import com.example.ejazzikapi.request.reservation.ParticipantInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -49,13 +51,15 @@ public class Mapper {
     private AttractionRepository attractionRepository;
 
     public ParticipantEntity mapParticipantInfoToEntity(ParticipantInfo participant, Integer reservationId) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+
         ParticipantEntity participantEntity = new ParticipantEntity();
         participantEntity.setFirstName(participant.getFistName());
         participantEntity.setLastName(participant.getLastName());
         participantEntity.setEmail(participant.getEmail());
         participantEntity.setPesel(participant.getPesel());
         participantEntity.setPassportNumber(participant.getPassportNumber());
-        participantEntity.setBirthDate(participant.getBirthDate());
+        participantEntity.setBirthDate(LocalDate.parse(participant.getBirthDate(), formatter));
         participantEntity.setReservationId(reservationId);
         return participantEntity;
     }

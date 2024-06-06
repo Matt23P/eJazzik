@@ -22,5 +22,5 @@ public class ParticipantInfo implements Serializable {
     @JsonProperty("passportNumber")
     private String passportNumber;
     @JsonProperty("birthDate")
-    private LocalDate birthDate;
+    private String birthDate;
 }

@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -17,6 +18,7 @@ public interface ParticipantRepository extends JpaRepository<ParticipantEntity, 
     List<ParticipantEntity> findAllByReservationId(Integer reservationId);
 
     @Modifying
+    @Transactional
     @Query("UPDATE ParticipantEntity p SET p.firstName = :#{#participant.firstName}, p.lastName = :#{#participant.lastName}, p.email = :#{#participant.email}, p.birthDate = :#{#participant.birthDate}, p.passportNumber = :#{#participant.passportNumber}, p.pesel = :#{#participant.pesel} WHERE p.participantId = :participantId")
     void updateByParticipantId(@Param("participantId") int participantId, @Param("participant") ParticipantEntity participant);
 

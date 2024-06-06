@@ -193,8 +193,8 @@ public class UserServiceImpl implements UserService {
             logger.log(Level.INFO, "User successfully updated");
             return new StatusResponse(null, true);
         } catch (Exception e) {
-            logger.log(Level.INFO, "Error while updating the user " + userId + " : " + e.getMessage());
-            return new StatusResponse(Collections.singletonList("No such user"), false);
+            logger.log(Level.INFO, "Error while updating the user " + userId + " : " + e.getMessage() + " " + e.toString());
+            return new StatusResponse(Collections.singletonList("Server error - please try again later"), false);
         }
     }
 

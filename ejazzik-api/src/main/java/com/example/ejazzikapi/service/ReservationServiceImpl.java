@@ -43,6 +43,7 @@ public class ReservationServiceImpl implements ReservationService{
             try {
                 List<ReservationEntity> reservationEntities = reservationRepository.findAllByUserId(userId);
                 if (reservationEntities.isEmpty()) {
+                    logger.log(Level.INFO, "No reservations found for the user " + userId);
                     return new UserReservationsResponse(Collections.emptyList(), false);
                 } else {
                     List<Reservation> userReservations = reservationEntities.stream().map(mapper::mapToReservation).toList();
@@ -62,6 +63,7 @@ public class ReservationServiceImpl implements ReservationService{
     @Override
     public StatusResponse createNewReservation(CreateReservationRequest request) {
         String errMsg = validator.checkExistenceOfTripAndUser(request.getTripId(), request.getUserId());
+        // TODO check if trip is not already reserved
         if (errMsg != null) {
             logger.log(Level.INFO, errMsg);
             return new StatusResponse(Collections.singletonList(errMsg), false);
