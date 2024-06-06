@@ -110,8 +110,8 @@ public class Mapper {
                 .collect(Collectors.toList());
 
         double pricePerPerson = getTotalTripPrice(flightArrivalEntity, flightDepartureEntity,
-                accommodationEntity, attractionEntities);
-        double priceInTotal = (pricePerPerson + entity.getProvision()) * entity.getNumberOfPeople();
+                accommodationEntity, attractionEntities) + entity.getProvision();
+        double priceInTotal = pricePerPerson * entity.getNumberOfPeople();
 
         Trip trip = new Trip();
         trip.setTripId(entity.getTripId());
@@ -124,9 +124,9 @@ public class Mapper {
         trip.setCountry(entity.getCountry());
         trip.setCity(entity.getCity());
         trip.setDate(entity.getDate());
-        trip.setPricePerPerson(entity.getPricePerPerson());
         trip.setNumberOfPeople(entity.getNumberOfPeople());
         trip.setProvision(entity.getProvision());
+        trip.setPricePerPerson(pricePerPerson);
         trip.setTotalPrice(priceInTotal);
 
         return trip;
