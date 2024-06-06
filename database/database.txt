@@ -79,7 +79,7 @@ CREATE TABLE trips (
     accommodationId INT,
     flightDepartureId INT,
     flightArrivalId INT,
-    date VARCHAR(10),
+    date VARCHAR(32),
     city VARCHAR(255),
     country VARCHAR(255),
     name VARCHAR(255),
