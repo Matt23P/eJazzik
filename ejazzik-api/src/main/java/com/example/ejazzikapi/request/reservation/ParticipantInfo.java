@@ -5,7 +5,6 @@ import lombok.Getter;
 
 import java.io.Serial;
 import java.io.Serializable;
-import java.time.LocalDate;
 
 @Getter
 public class ParticipantInfo implements Serializable {
