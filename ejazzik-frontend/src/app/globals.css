@@ -18,7 +18,7 @@
 
 .rs-navbar-default{
   /*background: linear-gradient(90deg, rgba(74, 89, 164, 1) 25%, rgba(101, 36, 129, 1) 65%) !important;*/
-  background-color: #f3e9d9 !important;
+  background-color: #f6f2ec !important;
   color: black !important;
 }
 
@@ -141,7 +141,7 @@
 
 .footer{
   color: black !important;
-  background-color: #d2d2d2 !important;
+  background-color: #f6f2ec !important;
 }
 
 .footer a{
@@ -184,3 +184,66 @@
   }
 }
 
+
+.divCard {
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.divCard > :first-child {
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.divCard:hover {
+  background: #c4baab !important;
+  color: white !important;
+}
+
+.divCard:hover > :first-child {
+  background: white !important;
+  color: #c4baab !important;
+}
+
+.cardBox, .advantagesCard {
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.cardContainer.animate, .advantagesDiv.animate{
+  opacity: 1; /* Pokaż kontener */
+  transition: opacity 1s ease-in-out;
+}
+
+.cardContainer.animate .cardBox, .advantagesDiv.animate .advantagesCard {
+  opacity: 1; /* Pokaż karty */
+  transform: translateY(0); /* Przesunięcie kart do pierwotnego miejsca */
+}
+
+.cardContainer.animate .cardBox:nth-child(1), .advantagesDiv.animate .advantagesCard:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.cardContainer.animate .cardBox:nth-child(2), .advantagesDiv.animate .advantagesCard:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.cardContainer.animate .cardBox:nth-child(3), .advantagesDiv.animate .advantagesCard:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.cardContainer.animate .cardBox:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+.cardContainer.animate .cardBox:nth-child(5) {
+  transition-delay: 0.5s;
+}
+
+.cardContainer.animate .cardBox:nth-child(6) {
+  transition-delay: 0.6s;
+}
+
+.offerBoxImgImg{
+  height: 300px;
+  object-fit: cover !important;
+  box-shadow: 0 0 30px rgba(0,0,0,0.2);
+  border-radius: 0.25em;
+}
