@@ -22,8 +22,8 @@ public class Trip {
     private String country;
     private String city;
     private String date;
-    private double pricePerPerson;
     private Integer numberOfPeople;
     private double provision;
+    private double pricePerPerson;
     private double totalPrice;
 }

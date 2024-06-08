@@ -112,6 +112,7 @@ public class UserServiceImpl implements UserService {
         if (userRepository.existsById(userId)) {
             String error = validator.validateName(newFirstName, "lastName");
             if (error != null) {
+                logger.log(Level.INFO, error);
                 return new StatusResponse(Collections.singletonList(error), false);
             }
             UserEntity userEntity = userRepository.findById(userId).get();
@@ -128,6 +129,7 @@ public class UserServiceImpl implements UserService {
         if (userRepository.existsById(userId)) {
             String error = validator.validateName(newLastName, "lastName");
             if (error != null) {
+                logger.log(Level.INFO, error);
                 return new StatusResponse(Collections.singletonList(error), false);
             }
             UserEntity userEntity = userRepository.findById(userId).get();
@@ -144,6 +146,7 @@ public class UserServiceImpl implements UserService {
         if (userRepository.existsById(userId)) {
             String error = validator.validateEmail(newEmail);
             if (error != null) {
+                logger.log(Level.INFO, error);
                 return new StatusResponse(Collections.singletonList(error), false);
             }
             UserEntity userEntity = userRepository.findById(userId).get();
@@ -160,6 +163,7 @@ public class UserServiceImpl implements UserService {
         if (userRepository.existsById(userId)) {
             String error = validator.validatePhoneNumber(newPhoneNumber);
             if (error != null) {
+                logger.log(Level.INFO, error);
                 return new StatusResponse(Collections.singletonList(error), false);
             }
             UserEntity userEntity = userRepository.findById(userId).get();
@@ -176,6 +180,7 @@ public class UserServiceImpl implements UserService {
         if (userRepository.existsById(userId)) {
             String error = validator.validatePassword(newPwd);
             if (error != null) {
+                logger.log(Level.INFO, error);
                 return new StatusResponse(Collections.singletonList(error), false);
             }
             UserEntity userEntity = userRepository.findById(userId).get();
@@ -193,8 +198,8 @@ public class UserServiceImpl implements UserService {
             logger.log(Level.INFO, "User successfully updated");
             return new StatusResponse(null, true);
         } catch (Exception e) {
-            logger.log(Level.INFO, "Error while updating the user " + userId + " : " + e.getMessage());
-            return new StatusResponse(Collections.singletonList("No such user"), false);
+            logger.log(Level.INFO, "Error while updating the user " + userId + " : " + e.getMessage() + " " + e.toString());
+            return new StatusResponse(Collections.singletonList("Server error - please try again later"), false);
         }
     }
 

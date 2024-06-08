@@ -5,6 +5,7 @@ import lombok.Getter;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.List;
 
 @Getter
 public class CreateReservationRequest implements Serializable {
@@ -14,4 +15,6 @@ public class CreateReservationRequest implements Serializable {
     private Integer tripId;
     @JsonProperty("userId")
     private Integer userId;
+    @JsonProperty("participants")
+    private List<ParticipantInfo> participants;
 }

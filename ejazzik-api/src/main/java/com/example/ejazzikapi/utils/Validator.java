@@ -1,5 +1,6 @@
 package com.example.ejazzikapi.utils;
 
+import com.example.ejazzikapi.repository.ReservationRepository;
 import com.example.ejazzikapi.repository.TripRepository;
 import com.example.ejazzikapi.repository.UserRepository;
 import com.example.ejazzikapi.request.user.SignUpRequest;
@@ -24,6 +25,8 @@ public class Validator {
     private UserRepository userRepository;
     @Autowired
     private TripRepository tripRepository;
+    @Autowired
+    private ReservationRepository reservationRepository;
 
 
     public List<String> signUpValidation(SignUpRequest signUpRequest) {

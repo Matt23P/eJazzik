@@ -22,9 +22,12 @@ import com.example.ejazzikapi.repository.FlightRepository;
 import com.example.ejazzikapi.repository.ParticipantRepository;
 import com.example.ejazzikapi.repository.TripAttractionRepository;
 import com.example.ejazzikapi.repository.TripRepository;
+import com.example.ejazzikapi.request.reservation.ParticipantInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -46,6 +49,33 @@ public class Mapper {
     private TripAttractionRepository tripAttractionRepository;
     @Autowired
     private AttractionRepository attractionRepository;
+
+    public ParticipantEntity mapParticipantInfoToEntity(ParticipantInfo participant, Integer reservationId) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+
+        ParticipantEntity participantEntity = new ParticipantEntity();
+        participantEntity.setFirstName(participant.getFistName());
+        participantEntity.setLastName(participant.getLastName());
+        participantEntity.setEmail(participant.getEmail());
+        participantEntity.setPesel(participant.getPesel());
+        participantEntity.setPassportNumber(participant.getPassportNumber());
+        participantEntity.setBirthDate(LocalDate.parse(participant.getBirthDate(), formatter));
+        participantEntity.setReservationId(reservationId);
+        return participantEntity;
+    }
+
+    public ParticipantEntity mapParticipantToEntity(Participant participant) {
+        ParticipantEntity participantEntity = new ParticipantEntity();
+        participantEntity.setFirstName(participant.getFistName());
+        participantEntity.setLastName(participant.getLastName());
+        participantEntity.setEmail(participant.getEmail());
+        participantEntity.setPesel(participant.getPesel());
+        participantEntity.setPassportNumber(participant.getPassportNumber());
+        participantEntity.setBirthDate(participant.getBirthDate());
+        participantEntity.setReservationId(participant.getReservationId());
+        participantEntity.setParticipantId(participantEntity.getParticipantId());
+        return participantEntity;
+    }
 
     public Reservation mapToReservation(ReservationEntity entity) {
         List<ParticipantEntity> participantEntities = participantRepository.findAllByReservationId(entity.getReservationId());
@@ -84,8 +114,8 @@ public class Mapper {
                 .collect(Collectors.toList());
 
         double pricePerPerson = getTotalTripPrice(flightArrivalEntity, flightDepartureEntity,
-                accommodationEntity, attractionEntities);
-        double priceInTotal = (pricePerPerson + entity.getProvision()) * entity.getNumberOfPeople();
+                accommodationEntity, attractionEntities) + entity.getProvision();
+        double priceInTotal = pricePerPerson * entity.getNumberOfPeople();
 
         Trip trip = new Trip();
         trip.setTripId(entity.getTripId());
@@ -98,9 +128,9 @@ public class Mapper {
         trip.setCountry(entity.getCountry());
         trip.setCity(entity.getCity());
         trip.setDate(entity.getDate());
-        trip.setPricePerPerson(entity.getPricePerPerson());
         trip.setNumberOfPeople(entity.getNumberOfPeople());
         trip.setProvision(entity.getProvision());
+        trip.setPricePerPerson(pricePerPerson);
         trip.setTotalPrice(priceInTotal);
 
         return trip;

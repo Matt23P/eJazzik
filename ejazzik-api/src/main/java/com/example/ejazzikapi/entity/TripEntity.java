@@ -51,9 +51,6 @@ public class TripEntity {
     @Column(name = "description")
     private String description;
 
-    @Column(name = "priceperperson")
-    private double pricePerPerson;
-
     @Column(name = "numberofpeople")
     private Integer numberOfPeople;
 
