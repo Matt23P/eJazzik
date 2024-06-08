@@ -9,7 +9,7 @@ export const Carousel = () => {
     return(
         <div className="h-screen carousel-container">
             <div className="image-overlay z-10">
-                <div  className="text-7xl max-lg:text-4xl text-white" >Poznawaj świat z eJazzik!</div>
+                <div  className="text-7xl max-md:text-4xl text-white" >Poznawaj świat z eJazzik!</div>
             </div>
             <C className="carousel" autoplay autoplayInterval={6000}>
                 <Image src={img1} alt={"houseOne"} priority className="imageCarousel" />
