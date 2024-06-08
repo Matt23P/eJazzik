@@ -67,7 +67,35 @@ INSERT INTO accommodations (
     'high',
     'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
     '555666777',
-    167.00
+    160.00
+);
+
+INSERT INTO accommodations (
+	id,name,address,maxpeople,standard,
+	description,phonenumber,price
+) VALUES (
+	6,
+    'Roar Apartment',
+    'Hugo St. 50, Kapsztad',
+    '6',
+    'medium',
+    'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
+    '995563748',
+    150.00
+);
+
+INSERT INTO accommodations (
+	id,name,address,maxpeople,standard,
+	description,phonenumber,price
+) VALUES (
+	7,
+    'Nina`s mansion',
+    'Ásgarður 155, Rejkiawik',
+    '8',
+    'high',
+    'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
+    '447526988',
+    220.00
 );
 
 -- ATTENDANTS
@@ -221,6 +249,142 @@ INSERT INTO flights (
 	455.00
 );
 
+INSERT INTO flights (
+	id,airportdeparture,datedeparture,timedeparture,carrier,
+	airportarrival,datearrival,timearrival,luggage,standard,price
+) VALUES (
+	7,
+    'Modlin Airport Warsaw',
+    '18.09.2024',
+    '08:30',
+    'WIZZ AIR',
+	'Rio de Janeiro-Galeão Airport',
+	'18.09.2024',
+	'20:00',
+	'hand luggage + one 20kg suitcase + 10kg suitcase',
+	'economic',
+	500.00
+);
+
+INSERT INTO flights (
+	id,airportdeparture,datedeparture,timedeparture,carrier,
+	airportarrival,datearrival,timearrival,luggage,standard,price
+) VALUES (
+	8,
+    'Rio de Janeiro-Galeão Airport',
+    '27.09.2024',
+    '22:00',
+    'Copa Airlines',
+	'Chopin Airport Warsaw',
+	'28.09.2024',
+	'10:30',
+	'hand luggage + one 35kg suitcase',
+	'economic',
+	500.00
+);
+
+INSERT INTO flights (
+	id,airportdeparture,datedeparture,timedeparture,carrier,
+	airportarrival,datearrival,timearrival,luggage,standard,price
+) VALUES (
+	9,
+    'John Paul II Airport Kraków',
+    '02.09.2024',
+    '12:30',
+    'LOT',
+	'Denpasar Airport',
+	'03.09.2024',
+	'7:00',
+	'hand luggage + one 20kg suitcase',
+	'first class',
+	500.00
+);
+
+INSERT INTO flights (
+	id,airportdeparture,datedeparture,timedeparture,carrier,
+	airportarrival,datearrival,timearrival,luggage,standard,price
+) VALUES (
+	10,
+    'Denpasar Airport',
+    '16.09.2024',
+    '6:00',
+    'LOT',
+	'Chopin Airport Warsaw',
+	'16.09.2024',
+	'19:30',
+	'hand luggage + one 20kg suitcase',
+	'economic',
+	300.00
+);
+
+INSERT INTO flights (
+	id,airportdeparture,datedeparture,timedeparture,carrier,
+	airportarrival,datearrival,timearrival,luggage,standard,price
+) VALUES (
+	11,
+    'John Paul II Airport Kraków',
+    '30.06.2024',
+    '6:30',
+    'South African Airways',
+	'Kapsztad Airport',
+	'30.06.2024',
+	'16:00',
+	'hand luggage + one 10kg suitcase',
+	'business',
+	330.00
+);
+
+INSERT INTO flights (
+	id,airportdeparture,datedeparture,timedeparture,carrier,
+	airportarrival,datearrival,timearrival,luggage,standard,price
+) VALUES (
+	12,
+    'Kapsztad Airport',
+    '08.07.2024',
+    '13:00',
+    'FlySafair',
+	'John Paul II Airport Kraków',
+	'09.07.2024',
+	'23:00',
+	'hand luggage + one 10kg suitcase',
+	'economic',
+	250.00
+);
+
+INSERT INTO flights (
+	id,airportdeparture,datedeparture,timedeparture,carrier,
+	airportarrival,datearrival,timearrival,luggage,standard,price
+) VALUES (
+	13,
+    'Chopin Airport Warsaw',
+    '16.10.2024',
+    '8:00',
+    'LOT',
+	'Keflavík Airport',
+	'16.10.2024',
+	'14:00',
+	'hand luggage + one 20kg suitcase',
+	'economic',
+	150.00
+);
+
+INSERT INTO flights (
+	id,airportdeparture,datedeparture,timedeparture,carrier,
+	airportarrival,datearrival,timearrival,luggage,standard,price
+) VALUES (
+	14,
+    'Reykjavík Domestic Airport',
+    '27.10.2024',
+    '13:00',
+    'Icelandair',
+	'Lublinek Łódź Airport',
+	'27.10.2024',
+	'17:00',
+	'hand luggage + one 20kg suitcase',
+	'economic',
+	130.00
+);
+
 -- ATTRACTIONS
 
 INSERT INTO attractions (
@@ -366,6 +530,160 @@ INSERT INTO attractions (
     25.00
 );
 
+INSERT INTO attractions (
+	id,name,description,address,phonenumber,price
+) VALUES (
+	14,
+    'A day of sailing on a luxurious yacht',
+    'lorem ipsum duration etc',
+    'R. Acre 21, Rio de Janerio',
+	'592147852',
+    80.00
+);
+
+INSERT INTO attractions (
+	id,name,description,address,phonenumber,price
+) VALUES (
+	15,
+    'Two days adventure in jungle with Bear Grylls',
+    'lorem ipsum duration etc',
+    'R. Princesa Isabel 83/1, Rio de Janerio',
+	'675983547',
+    100.00
+);
+
+INSERT INTO attractions (
+	id,name,description,address,phonenumber,price
+) VALUES (
+	16,
+    'Contemporary Art Museum Trip',
+    'lorem ipsum duration etc',
+    'Mirante da Boa Viagem 112, Rio de Janerio',
+	'592147852',
+    25.00
+);
+
+INSERT INTO attractions (
+	id,name,description,address,phonenumber,price
+) VALUES (
+	17,
+    'Carnival Party Night',
+    'lorem ipsum duration etc',
+    'Praca da Republica 173, Rio de Janerio',
+	'864259855',
+    25.00
+);
+
+INSERT INTO attractions (
+	id,name,description,address,phonenumber,price
+) VALUES (
+	18,
+    'Helicopter Tour',
+    'lorem ipsum duration etc',
+    'Jl. Raya Kampus Unud 803, Denpasar',
+	'855997466',
+    80.00
+);
+
+INSERT INTO attractions (
+	id,name,description,address,phonenumber,price
+) VALUES (
+	19,
+    'One Day Trip to Ubud District',
+    'lorem ipsum duration etc',
+    'Gg. V Kapal 78, Denpasar',
+	'663562752',
+    100.00
+);
+
+INSERT INTO attractions (
+	id,name,description,address,phonenumber,price
+) VALUES (
+	20,
+    'Leke Leke Waterfall',
+    'lorem ipsum duration etc',
+    'Gg. Mawar 13, Denpasar',
+	'855997466',
+    20.00
+);
+
+INSERT INTO attractions (
+	id,name,description,address,phonenumber,price
+) VALUES (
+	21,
+    'Atlas Super Club Night',
+    'lorem ipsum duration etc',
+    'Jl. Pantai Berawa 88, Denpasar',
+	'663562752',
+    25.00
+);
+
+INSERT INTO attractions (
+	id,name,description,address,phonenumber,price
+) VALUES (
+	22,
+    'Wild Safari',
+    'lorem ipsum duration etc',
+    'Voortrekker Rd. 78, Kapsztad',
+	'663562752',
+    150.00
+);
+
+INSERT INTO attractions (
+	id,name,description,address,phonenumber,price
+) VALUES (
+	23,
+    'Cape Agulhas Trip',
+    'lorem ipsum duration etc',
+    'Old Faure Rd. 13, Kapsztad',
+	'855997466',
+    80.00
+);
+
+INSERT INTO attractions (
+	id,name,description,address,phonenumber,price
+) VALUES (
+	24,
+    'A Day With Soto Tribe',
+    'lorem ipsum duration etc',
+    'Old Pearl Rd. 88, Kapsztad',
+	'663562752',
+    100.00
+);
+
+INSERT INTO attractions (
+	id,name,description,address,phonenumber,price
+) VALUES (
+	25,
+    'Northern Lights',
+    'lorem ipsum duration etc',
+    'Stóragerði 4-8, Rejkiawik',
+	'744752891',
+    20.00
+);
+
+INSERT INTO attractions (
+	id,name,description,address,phonenumber,price
+) VALUES (
+	26,
+    'Trip to Fagradalsfjall Vulcano',
+    'lorem ipsum duration etc',
+    '210 Garðabær, Rejkiawik',
+	'855997466',
+    100.00
+);
+
+INSERT INTO attractions (
+	id,name,description,address,phonenumber,price
+) VALUES (
+	27,
+    'Three Day Trip to Snæfellsjökul National Park',
+    'lorem ipsum duration etc',
+    'Tangabryggja 4, Rejkiawik',
+	'855997466',
+    350.00
+);
+
 -- TRIPS
 
 INSERT INTO trips (
@@ -419,6 +737,73 @@ INSERT INTO trips (
 	300.00
 );
 
+INSERT INTO trips (
+	id,accommodationid,flightdepartureid,flightarrivalid,date,
+	city,country,name,description,numberofpeople,provision
+) VALUES (
+	4,
+	5,
+	7,
+	8,
+	'18.09.24 - 28.09.24',
+	'Rio de Janerio',
+	'Brazil',
+	'Plata o Plomo Adventure',
+	'lorem ipsum description',
+	7,
+	400.00
+);
+
+INSERT INTO trips (
+	id,accommodationid,flightdepartureid,flightarrivalid,date,
+	city,country,name,description,numberofpeople,provision
+) VALUES (
+	5,
+	3,
+	9,
+	10,
+	'02.09.24 - 16.09.24',
+	'Denpasar',
+	'Bali',
+	'Hot Oceania',
+	'lorem ipsum description',
+	8,
+	200.00
+);
+
+INSERT INTO trips (
+	id,accommodationid,flightdepartureid,flightarrivalid,date,
+	city,country,name,description,numberofpeople,provision
+) VALUES (
+	6,
+	6,
+	11,
+	12,
+	'30.06.24 - 09.07.24',
+	'Kapsztad',
+	'RPA',
+	'Waka Waka Africa',
+	'lorem ipsum description',
+	6,
+	250.00
+);
+
+INSERT INTO trips (
+	id,accommodationid,flightdepartureid,flightarrivalid,date,
+	city,country,name,description,numberofpeople,provision
+) VALUES (
+	7,
+	7,
+	13,
+	14,
+	'16.10.24 - 27.10.24',
+	'Rejkiawik',
+	'Iceland',
+	'In the Footsteps of the Vikings',
+	'lorem ipsum description',
+	8,
+	300.00
+);
 
 -- TRIP ATTRACTION
 
@@ -524,4 +909,116 @@ INSERT INTO tripattractions (
 	13,
 	3,
 	13
+);
+
+INSERT INTO tripattractions (
+	id,tripid,attractionid
+) VALUES (
+	14,
+	4,
+	14
+);
+
+INSERT INTO tripattractions (
+	id,tripid,attractionid
+) VALUES (
+	15,
+	4,
+	15
+);
+
+INSERT INTO tripattractions (
+	id,tripid,attractionid
+) VALUES (
+	16,
+	4,
+	16
+);
+
+INSERT INTO tripattractions (
+	id,tripid,attractionid
+) VALUES (
+	17,
+	4,
+	17
+);
+
+INSERT INTO tripattractions (
+	id,tripid,attractionid
+) VALUES (
+	18,
+	5,
+	18
+);
+
+INSERT INTO tripattractions (
+	id,tripid,attractionid
+) VALUES (
+	19,
+	5,
+	19
+);
+
+INSERT INTO tripattractions (
+	id,tripid,attractionid
+) VALUES (
+	20,
+	5,
+	20
+);
+
+INSERT INTO tripattractions (
+	id,tripid,attractionid
+) VALUES (
+	21,
+	5,
+	21
+);
+
+INSERT INTO tripattractions (
+	id,tripid,attractionid
+) VALUES (
+	22,
+	6,
+	22
+);
+
+INSERT INTO tripattractions (
+	id,tripid,attractionid
+) VALUES (
+	23,
+	6,
+	23
+);
+
+INSERT INTO tripattractions (
+	id,tripid,attractionid
+) VALUES (
+	24,
+	6,
+	24
+);
+
+INSERT INTO tripattractions (
+	id,tripid,attractionid
+) VALUES (
+	25,
+	7,
+	25
+);
+
+INSERT INTO tripattractions (
+	id,tripid,attractionid
+) VALUES (
+	26,
+	7,
+	26
+);
+
+INSERT INTO tripattractions (
+	id,tripid,attractionid
+) VALUES (
+	27,
+	7,
+	27
 );
