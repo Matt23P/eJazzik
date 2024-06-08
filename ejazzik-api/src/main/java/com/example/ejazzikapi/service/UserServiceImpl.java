@@ -184,7 +184,7 @@ public class UserServiceImpl implements UserService {
                 return new StatusResponse(Collections.singletonList(error), false);
             }
             UserEntity userEntity = userRepository.findById(userId).get();
-            userEntity.setPassword(newPwd);
+            userEntity.setPassword(this.passwordEncoder.encode(newPwd));
             return userUpdate(userEntity, userId);
         } else {
             logger.log(Level.INFO, "No user with this ID");
