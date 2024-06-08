@@ -62,6 +62,10 @@ public class ReservationServiceImpl implements ReservationService{
 
     @Override
     public StatusResponse createNewReservation(CreateReservationRequest request) {
+        if (reservationRepository.findByTripId(request.getTripId()) != null) {
+            logger.log(Level.INFO, "This trip is already reserved");
+            return new StatusResponse(Collections.singletonList("This trip is already reserved"), false);
+        }
         String errMsg = validator.checkExistenceOfTripAndUser(request.getTripId(), request.getUserId());
         // TODO check if trip is not already reserved
         if (errMsg != null) {

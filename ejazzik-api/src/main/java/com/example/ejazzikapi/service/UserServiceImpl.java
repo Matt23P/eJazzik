@@ -112,6 +112,7 @@ public class UserServiceImpl implements UserService {
         if (userRepository.existsById(userId)) {
             String error = validator.validateName(newFirstName, "lastName");
             if (error != null) {
+                logger.log(Level.INFO, error);
                 return new StatusResponse(Collections.singletonList(error), false);
             }
             UserEntity userEntity = userRepository.findById(userId).get();
@@ -128,6 +129,7 @@ public class UserServiceImpl implements UserService {
         if (userRepository.existsById(userId)) {
             String error = validator.validateName(newLastName, "lastName");
             if (error != null) {
+                logger.log(Level.INFO, error);
                 return new StatusResponse(Collections.singletonList(error), false);
             }
             UserEntity userEntity = userRepository.findById(userId).get();
@@ -144,6 +146,7 @@ public class UserServiceImpl implements UserService {
         if (userRepository.existsById(userId)) {
             String error = validator.validateEmail(newEmail);
             if (error != null) {
+                logger.log(Level.INFO, error);
                 return new StatusResponse(Collections.singletonList(error), false);
             }
             UserEntity userEntity = userRepository.findById(userId).get();
@@ -160,6 +163,7 @@ public class UserServiceImpl implements UserService {
         if (userRepository.existsById(userId)) {
             String error = validator.validatePhoneNumber(newPhoneNumber);
             if (error != null) {
+                logger.log(Level.INFO, error);
                 return new StatusResponse(Collections.singletonList(error), false);
             }
             UserEntity userEntity = userRepository.findById(userId).get();
@@ -176,6 +180,7 @@ public class UserServiceImpl implements UserService {
         if (userRepository.existsById(userId)) {
             String error = validator.validatePassword(newPwd);
             if (error != null) {
+                logger.log(Level.INFO, error);
                 return new StatusResponse(Collections.singletonList(error), false);
             }
             UserEntity userEntity = userRepository.findById(userId).get();
