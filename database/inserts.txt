@@ -8,8 +8,8 @@ INSERT INTO accommodations (
     'Sky Apartments',
     'Ruga Egnatia 12, Durres',
     '10',
-    'high',
-    'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
+    'Wysoki',
+    'Nowoczesny i świeżo wyremontowany kompleks dwóch apartamentów 5-cio osobowy na 11 piętrze wieżowca w samym centrum miasta Durres. W pobliżu znajduje się wiele lokalnych marketów, ruinych amfiteatru, muzeum, wiele restauracji i promenada nad brzegiem morza.',
     '111222333',
     120.00
 );
@@ -21,9 +21,9 @@ INSERT INTO accommodations (
 	2,
     'Sunny Villa',
     'Cleopatra avenue 2, Kair',
-    '6',
-    'luxurious',
-    'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
+    '4',
+    'Luksusowy',
+    'Sunny Villa to luksusowy dom na obrzeżach Kairu, ze wszystkimi udogodnieniami w pobliżu. Położenie kwatery również ułatwia komunikację do wszelkich atrakcji w stolicy Egiptu.',
     '333222111',
     215.00
 );
@@ -36,8 +36,8 @@ INSERT INTO accommodations (
     'Mad Man Cabin',
     'Lone Island Street 746, Denpasar',
     '8',
-    'medium',
-    'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
+    'Średni',
+    'Domek o tradycyjnym wyposażeniu odpowiadającemu wyspie Bali pozwoli Ci jeszcze bardziej zasmakować tamtejszego klimatu.',
     '888999777',
     100.00
 );
@@ -50,8 +50,8 @@ INSERT INTO accommodations (
     'Sea View Mansion',
     'Pacific Coast Hwy 13/78, Los Angeles',
     '8',
-    'luxurious',
-    'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
+    'Luksusowy',
+    'Posiadłość położona nad zachodnim wybrzeżem Stanów Zjednoczonych pozwoli Ci poczuć się jak w seriali Miami Vice!',
     '123123123',
     250.00
 );
@@ -64,8 +64,8 @@ INSERT INTO accommodations (
     'Adventure`s Lair',
     'Lima Barreto 90, Rio De Janerio',
     '7',
-    'high',
-    'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
+    'Wysoki',
+    'Adventure`s Lair to apartament o wysokim standardzie udekorowany by przypominać obóz samego Indiany John`sa na wyprawie po kryształową czaszkę!',
     '555666777',
     160.00
 );
@@ -78,8 +78,8 @@ INSERT INTO accommodations (
     'Roar Apartment',
     'Hugo St. 50, Kapsztad',
     '6',
-    'medium',
-    'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
+    'Średni',
+    'Mieszkanie na 3 piętrze budynku mieszkalnego w centrum RPA.',
     '995563748',
     150.00
 );
@@ -92,10 +92,24 @@ INSERT INTO accommodations (
     'Nina`s mansion',
     'Ásgarður 155, Rejkiawik',
     '8',
-    'high',
-    'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
+    'Wysoki',
+    'Elegancka posiadłość na obrzeżach Rejikawik`u z pięknym widokiem na okoliczne wzgórza wulkaniczne, wynajmowana od sympatycznej Pani Niny. Czy może być lepiej?',
     '447526988',
     220.00
+);
+
+INSERT INTO accommodations (
+	id,name,address,maxpeople,standard,
+	description,phonenumber,price
+) VALUES (
+	8,
+    'Cherry blossom house',
+    '3 Chome Hanta, Tokyo',
+    '2',
+    'Luksusowy',
+    'Luksusowy tradycyjny japoński dom w otoczeniu kwitnących drzew wiśni, dzięki którym Twój pobyt będzie w romantycznym azjatyckim klimacie. W pobliżu zakwaterowania znajduję się mnóstwo sklepów spożywczych, stacja metra co pozwala na dojazd do centrum Tokio w 10 minut. Dom znajduje się w dzielnicy Koshigaya, w prefekturze Saitama.',
+    '669775789',
+    550.00
 );
 
 -- ATTENDANTS
@@ -158,8 +172,8 @@ INSERT INTO flights (
 	'Kair Airport',
 	'16.07.2024',
 	'6:00',
-	'hand luggage + one 10kg suitcase',
-	'economic',
+	'bagaż podręczny + walizka 10kg',
+	'ekonomiczna',
 	50.00
 );
 
@@ -175,8 +189,8 @@ INSERT INTO flights (
 	'Modlin Airport Warsaw',
 	'24.07.2024',
 	'20:00',
-	'hand luggage + one 10kg suitcase',
-	'economic',
+	'bagaż podręczny + walizka 10kg',
+	'ekonomiczna',
 	45.99
 );
 
@@ -193,8 +207,8 @@ INSERT INTO flights (
 	'Tirana Airport',
 	'09.08.2024',
 	'16:00',
-	'hand luggage + one 20kg suitcase',
-	'business',
+	'bagaż podręczny + walizka 20kg',
+	'biznesowa',
 	65.00
 );
 
@@ -210,8 +224,8 @@ INSERT INTO flights (
 	'John Paul II Airport Kraków',
 	'23.08.2024',
 	'20:00',
-	'hand luggage + one 20kg suitcase',
-	'economic',
+	'bagaż podręczny + walizka 20kg',
+	'ekonomiczna',
 	25.00
 );
 
@@ -227,8 +241,8 @@ INSERT INTO flights (
 	'International Airport Los Angeles',
 	'22.07.2024',
 	'08:00',
-	'hand luggage + one 20kg suitcase',
-	'first class',
+	'bagaż podręczny + walizka 20kg',
+	'pierwsza klasa',
 	600.00
 );
 
@@ -244,8 +258,8 @@ INSERT INTO flights (
 	'Lech Wałęsa International Airport Gdańsk',
 	'09.08.2024',
 	'13:30',
-	'hand luggage + one 35kg suitcase',
-	'economic',
+	'bagaż podręczny + walizka 35kg',
+	'ekonomiczna',
 	455.00
 );
 
@@ -261,8 +275,8 @@ INSERT INTO flights (
 	'Rio de Janeiro-Galeão Airport',
 	'18.09.2024',
 	'20:00',
-	'hand luggage + one 20kg suitcase + 10kg suitcase',
-	'economic',
+	'bagaż podręczny + walizka 20kg + walizka 10kg',
+	'ekonomiczna',
 	500.00
 );
 
@@ -278,8 +292,8 @@ INSERT INTO flights (
 	'Chopin Airport Warsaw',
 	'28.09.2024',
 	'10:30',
-	'hand luggage + one 35kg suitcase',
-	'economic',
+	'bagaż podręczny + walizka 35kg',
+	'ekonomiczna',
 	500.00
 );
 
@@ -295,8 +309,8 @@ INSERT INTO flights (
 	'Denpasar Airport',
 	'03.09.2024',
 	'7:00',
-	'hand luggage + one 20kg suitcase',
-	'first class',
+	'bagaż podręczny + walizka 20kg',
+	'pierwsza klasa',
 	500.00
 );
 
@@ -312,8 +326,8 @@ INSERT INTO flights (
 	'Chopin Airport Warsaw',
 	'16.09.2024',
 	'19:30',
-	'hand luggage + one 20kg suitcase',
-	'economic',
+	'bagaż podręczny + walizka 20kg',
+	'ekonomiczna',
 	300.00
 );
 
@@ -329,8 +343,8 @@ INSERT INTO flights (
 	'Kapsztad Airport',
 	'30.06.2024',
 	'16:00',
-	'hand luggage + one 10kg suitcase',
-	'business',
+	'bagaż podręczny + walizka 10kg',
+	'biznesowa',
 	330.00
 );
 
@@ -346,8 +360,8 @@ INSERT INTO flights (
 	'John Paul II Airport Kraków',
 	'09.07.2024',
 	'23:00',
-	'hand luggage + one 10kg suitcase',
-	'economic',
+	'bagaż podręczny + walizka 10kg',
+	'ekonomiczna',
 	250.00
 );
 
@@ -363,8 +377,8 @@ INSERT INTO flights (
 	'Keflavík Airport',
 	'16.10.2024',
 	'14:00',
-	'hand luggage + one 20kg suitcase',
-	'economic',
+	'bagaż podręczny + walizka 20kg',
+	'ekonomiczna',
 	150.00
 );
 
@@ -380,9 +394,43 @@ INSERT INTO flights (
 	'Lublinek Łódź Airport',
 	'27.10.2024',
 	'17:00',
-	'hand luggage + one 20kg suitcase',
-	'economic',
+	'bagaż podręczny + walizka 20kg',
+	'ekonomiczna',
 	130.00
+);
+
+INSERT INTO flights (
+	id,airportdeparture,datedeparture,timedeparture,carrier,
+	airportarrival,datearrival,timearrival,luggage,standard,price
+) VALUES (
+	15,
+    'Chopin Airport Warsaw',
+    '23.04.2025',
+    '11:00',
+    'LOT',
+	'Tokio-Haneda Airport',
+	'25.04.2025',
+	'7:00',
+	'bagaż podręczny + walizka 20kg',
+	'biznesowa',
+	220.00
+);
+
+INSERT INTO flights (
+	id,airportdeparture,datedeparture,timedeparture,carrier,
+	airportarrival,datearrival,timearrival,luggage,standard,price
+) VALUES (
+	16,
+    'Reykjavík Domestic Airport',
+    '02.05.2025',
+    '22:00',
+    'LOT',
+	'Narita Airport',
+	'03.05.2024',
+	'14:00',
+	'bagaż podręczny + walizka 20kg',
+	'biznesowa',
+	200.00
 );
 
 -- ATTRACTIONS
@@ -391,8 +439,8 @@ INSERT INTO attractions (
 	id,name,description,address,phonenumber,price
 ) VALUES (
 	1,
-    'Ski Jet Ride',
-    'lorem ipsum duration etc',
+    'Przejażdżka skuterem wodnym',
+    'Skuter wodny dla każdego uczestnika wycieczki z wypożyczeniem na 2h + 2 instruktorów.',
     'Ruga Avedicii 13, Durres',
 	'123123123',
     50.00
@@ -403,7 +451,7 @@ INSERT INTO attractions (
 ) VALUES (
 	2,
     'Paintball',
-    'lorem ipsum duration etc',
+    '1.5h godzinna rozrywka na terenie opuszczonych bunkrów na terenie Golem.',
     'Ruga Militarie 67, Golem',
 	'789789789',
     25.00
@@ -414,7 +462,7 @@ INSERT INTO attractions (
 ) VALUES (
 	3,
     'Disco - Makarena Club',
-    'lorem ipsum duration etc',
+    'Taneczna noc w najepszym klubie w Durres! (cena uwzględnia tylko opłatę wejściową do klubu)',
     'Ruga Avedicii 45, Durres',
 	'852852852',
     10.00
@@ -425,7 +473,7 @@ INSERT INTO attractions (
 ) VALUES (
 	4,
     'Helicopter flight - Hugo Raves',
-    'lorem ipsum duration etc',
+    'Godzinny przelot helikopterem nad miastem z doświadczonym pilotem.',
     'Platze Pilote 3, Durres',
 	'555666222',
     80.00
@@ -435,8 +483,8 @@ INSERT INTO attractions (
 	id,name,description,address,phonenumber,price
 ) VALUES (
 	5,
-    'Camel Riding with People Of Desert',
-    'lorem ipsum duration etc',
+    'Przejażdżka wielbłądami z ludźmi pustyni',
+    'Przejażdżka wielbłądami do nabliższej oazy trwająca 4 godziny z doświadczonymi w przeprawach ludźmi pustyni. Idealna okazja na wysłuchanie ich historii!',
     'Tutenhamon Street 7, Kair',
 	'963963963',
     30.00
@@ -446,8 +494,8 @@ INSERT INTO attractions (
 	id,name,description,address,phonenumber,price
 ) VALUES (
 	6,
-    'Quad race of the shore of Nile river',
-    'lorem ipsum duration etc',
+    'Wyścig quadami wzdłuż wybrzeża Nilu',
+    'Trochę zdrowej rywalizacji nikomu nie zaszkodzi!',
     'Nile Street 67, Kair',
 	'159159159',
     85.00
@@ -457,8 +505,8 @@ INSERT INTO attractions (
 	id,name,description,address,phonenumber,price
 ) VALUES (
 	7,
-    'Scuba diving with dolphins',
-    'lorem ipsum duration etc',
+    'Nurkowanie z delfinami',
+    'Półtora godzinne nurkowanie z delfinami w Parku Wodnym Kair.',
     'Desert Boulevard 3, Kair',
 	'753753753',
     25.00
@@ -468,8 +516,8 @@ INSERT INTO attractions (
 	id,name,description,address,phonenumber,price
 ) VALUES (
 	8,
-    'Casino Night',
-    'lorem ipsum duration etc',
+    'Casino Night!',
+    'Noc w najsłynniejszym kasynie zachodniego wybrzeża!',
     '1000 Redondo Beach Blvd, Los Angelos',
 	'310719980',
     300.00
@@ -479,8 +527,8 @@ INSERT INTO attractions (
 	id,name,description,address,phonenumber,price
 ) VALUES (
 	9,
-    'Basketball training with Marcin Gortat',
-    'lorem ipsum duration etc',
+    'Trening koszykarski z Marcinem Gortatem',
+    'Dwugodzinny trening z polską gwiązdą parkietów NBA.',
     '1708-1798 Ocean Front Walk, Los Angelos',
 	'696858721',
     125.00
@@ -490,8 +538,8 @@ INSERT INTO attractions (
 	id,name,description,address,phonenumber,price
 ) VALUES (
 	10,
-    'Day in Malibu',
-    'lorem ipsum duration etc',
+    'Dzień w Malibu',
+    'Dzień w Malibu wraz z przewodnikiem.',
     '5788-5776 Adams Blvd, Los Angelos',
 	'696858721',
     200.00
@@ -501,8 +549,8 @@ INSERT INTO attractions (
 	id,name,description,address,phonenumber,price
 ) VALUES (
 	11,
-    'Day in Hollywood with guide - Marvin Santos',
-    'lorem ipsum duration etc',
+    'Dzień w Hollywood - Marvin Santos',
+    'Wycieczka po ulicach filmowej dzielnicy Hollywood.',
     '5525 Santa Monica Blvd, Los Angelos',
 	'696858721',
     300.00
@@ -512,8 +560,8 @@ INSERT INTO attractions (
 	id,name,description,address,phonenumber,price
 ) VALUES (
 	12,
-    'The Museum of Contemporary Art',
-    'lorem ipsum duration etc',
+    'Muzeum Sztuki Współczesnej',
+    'Muzeum Sztuki Współczesnej',
     '250 S Grand Ave, Los Angelos',
 	'850129635',
     20.00
@@ -523,8 +571,8 @@ INSERT INTO attractions (
 	id,name,description,address,phonenumber,price
 ) VALUES (
 	13,
-    'Academy Museum of Motion Pictures',
-    'lorem ipsum duration etc',
+    'Muzeum Akademii Filmowej',
+    'Muzeum Akademii Filmowej',
     '6067 Wilshire Blvd, Los Angelos',
 	'850129635',
     25.00
@@ -534,8 +582,8 @@ INSERT INTO attractions (
 	id,name,description,address,phonenumber,price
 ) VALUES (
 	14,
-    'A day of sailing on a luxurious yacht',
-    'lorem ipsum duration etc',
+    'Dzień żeglowania luksusowym jachtem',
+    'Dzień żeglowania luksusowym jachtem',
     'R. Acre 21, Rio de Janerio',
 	'592147852',
     80.00
@@ -545,8 +593,8 @@ INSERT INTO attractions (
 	id,name,description,address,phonenumber,price
 ) VALUES (
 	15,
-    'Two days adventure in jungle with Bear Grylls',
-    'lorem ipsum duration etc',
+    'Dwudniowa przygoda w dżungli z Bearem Gryllsem',
+    'Dwudniowa przygoda w dżungli pod opieką Beara Gryllsa',
     'R. Princesa Isabel 83/1, Rio de Janerio',
 	'675983547',
     100.00
@@ -556,8 +604,8 @@ INSERT INTO attractions (
 	id,name,description,address,phonenumber,price
 ) VALUES (
 	16,
-    'Contemporary Art Museum Trip',
-    'lorem ipsum duration etc',
+    'Wycieczka do Muzeum Sztuki Współczesnej',
+    'Wycieczka do Muzeum Sztuki Współczesnej',
     'Mirante da Boa Viagem 112, Rio de Janerio',
 	'592147852',
     25.00
@@ -567,8 +615,8 @@ INSERT INTO attractions (
 	id,name,description,address,phonenumber,price
 ) VALUES (
 	17,
-    'Carnival Party Night',
-    'lorem ipsum duration etc',
+    'Noc karnawałowa',
+    'Noc karnawałowa',
     'Praca da Republica 173, Rio de Janerio',
 	'864259855',
     25.00
@@ -578,8 +626,8 @@ INSERT INTO attractions (
 	id,name,description,address,phonenumber,price
 ) VALUES (
 	18,
-    'Helicopter Tour',
-    'lorem ipsum duration etc',
+    'Przelot helikopterem',
+    'Przelot helikopterem',
     'Jl. Raya Kampus Unud 803, Denpasar',
 	'855997466',
     80.00
@@ -589,8 +637,8 @@ INSERT INTO attractions (
 	id,name,description,address,phonenumber,price
 ) VALUES (
 	19,
-    'One Day Trip to Ubud District',
-    'lorem ipsum duration etc',
+    'Jednodniowa wycieczka do dzielnicy Ubud',
+    'Jednodniowa wycieczka do dzielnicy Ubud',
     'Gg. V Kapal 78, Denpasar',
 	'663562752',
     100.00
@@ -600,8 +648,8 @@ INSERT INTO attractions (
 	id,name,description,address,phonenumber,price
 ) VALUES (
 	20,
-    'Leke Leke Waterfall',
-    'lorem ipsum duration etc',
+    'Wodospad Leke Leke',
+    'Wodospad Leke Leke',
     'Gg. Mawar 13, Denpasar',
 	'855997466',
     20.00
@@ -611,8 +659,8 @@ INSERT INTO attractions (
 	id,name,description,address,phonenumber,price
 ) VALUES (
 	21,
-    'Atlas Super Club Night',
-    'lorem ipsum duration etc',
+    'Noc w klubie Atlas Super Club',
+    'Noc w klubie Atlas Super Club',
     'Jl. Pantai Berawa 88, Denpasar',
 	'663562752',
     25.00
@@ -623,7 +671,7 @@ INSERT INTO attractions (
 ) VALUES (
 	22,
     'Wild Safari',
-    'lorem ipsum duration etc',
+    'Safari',
     'Voortrekker Rd. 78, Kapsztad',
 	'663562752',
     150.00
@@ -633,8 +681,8 @@ INSERT INTO attractions (
 	id,name,description,address,phonenumber,price
 ) VALUES (
 	23,
-    'Cape Agulhas Trip',
-    'lorem ipsum duration etc',
+    'Wycieczka na przylądek Igielny',
+    'Wycieczka na przylądek Igielny - najbardziej wysunięty na południe punkt Afryki.',
     'Old Faure Rd. 13, Kapsztad',
 	'855997466',
     80.00
@@ -644,8 +692,8 @@ INSERT INTO attractions (
 	id,name,description,address,phonenumber,price
 ) VALUES (
 	24,
-    'A Day With Soto Tribe',
-    'lorem ipsum duration etc',
+    'Dzień z plemieniem Soto',
+    'Dzień z plemieniem Soto',
     'Old Pearl Rd. 88, Kapsztad',
 	'663562752',
     100.00
@@ -655,8 +703,8 @@ INSERT INTO attractions (
 	id,name,description,address,phonenumber,price
 ) VALUES (
 	25,
-    'Northern Lights',
-    'lorem ipsum duration etc',
+    'Oglądanie zorzy polarnych',
+    'Oglądanie zorzy polarnych',
     'Stóragerði 4-8, Rejkiawik',
 	'744752891',
     20.00
@@ -666,8 +714,8 @@ INSERT INTO attractions (
 	id,name,description,address,phonenumber,price
 ) VALUES (
 	26,
-    'Trip to Fagradalsfjall Vulcano',
-    'lorem ipsum duration etc',
+    'Wyczieczka krajoznawcza - Fagradalsfjall Vulcano',
+    'Wyczieczka krajoznawcza - Fagradalsfjall Vulcano',
     '210 Garðabær, Rejkiawik',
 	'855997466',
     100.00
@@ -677,11 +725,44 @@ INSERT INTO attractions (
 	id,name,description,address,phonenumber,price
 ) VALUES (
 	27,
-    'Three Day Trip to Snæfellsjökul National Park',
-    'lorem ipsum duration etc',
+    'Trzy dniowa wycieczka do Parku Narodowego Snæfellsjökul',
+    'Trzy dniowa wycieczka do Parku Narodowego Snæfellsjökul',
     'Tangabryggja 4, Rejkiawik',
 	'855997466',
     350.00
+);
+
+INSERT INTO attractions (
+	id,name,description,address,phonenumber,price
+) VALUES (
+	28,
+    'Przygoda w Sensō-ji',
+    'Całodniowa przygotwa w buddyjskiej świątyni buddyjskiej pozwoli wam odczuć klimat drugiej najpopularniejszej religii w Japonii na własnej skórze. Podczas wycieczki oprowadzać was będzie mnich Jack Chong, którego rodzice przybyli do Japonii z USA 30 lat temu. Zdradzi wiele ciekawych opowieści nie tylko na temat relgii, ale również na temat samego Tokyo i pokaże Wam jak wygląda typowy dzień mnicha w świątyni Sensō-ji.',
+    '2-chōme-7 Hanakawado, Tokyo',
+	'889547225',
+    250.00
+);
+
+INSERT INTO attractions (
+	id,name,description,address,phonenumber,price
+) VALUES (
+	29,
+    'Pałac Cesarski Toktio + Dzielnica Shibuya',
+    'Całodniowa wycieczka po ogromnym tokijskim pałacu wraz z przewodnikiem Hinatą Lee, która w ciekawy sposób przybliży Wam historię Japonii. W ramach wycieczki zaplanowany również jest wieczór w barze w dzielnicy Shibuya wraz z przewodniczką, która jest duszą towarzystwa i przy kieliszku sake opowie ekscytujące historie swojego wuja, który był przwyódcą motocyklowego gangu w latach 80 XIX w. wyznającego kulturę Bosozoku.',
+    '1-chōme-1 Hitotsubashi, Tokyo',
+	'889547225',
+    350.00
+);
+
+INSERT INTO attractions (
+	id,name,description,address,phonenumber,price
+) VALUES (
+	30,
+    'Ogród Zoologiczny Ueno',
+    'Wyczieczka do najsłynniejszego japońskiego ZOO zapewni Wam ciekawe doświadczenia przez około pół dnia.',
+    '9-83 Uenokoen, Tokyo',
+	'889547225',
+    100.00
 );
 
 -- TRIPS
@@ -696,10 +777,10 @@ INSERT INTO trips (
 	2,
 	'15.07.24 - 24.07.24',
 	'Kair',
-	'Egypt',
-	'Pharaoh`s Trip',
-	'lorem ipsum description',
-	6,
+	'Egipt',
+	'Wycieczka Faraona!',
+	'Zapraszamy Cię do rezerwacji wycieczki w wyjątkowe miejsce jakim jest Egypt - Kair. Podróż odbędzie się w dniach 15.07.24 - 24.07.24, co daje 9 dni niezapomnianej podróży.',
+	4,
 	250.00
 );
 
@@ -714,8 +795,8 @@ INSERT INTO trips (
 	'09.08.24 - 23.08.24',
 	'Durres',
 	'Albania',
-	'Albanian Fever',
-	'lorem ipsum description',
+	'Albańska gorączka',
+	'Zapraszamy Cię do rezerwacji wycieczki w wyjątkowe miejsce jakim jest Albania - Durres. Podróż odbędzie się w dniach 09.08.24 - 23.08.24, co daje 14 dni niezapomnianej podróży.',
 	10,
 	200.00
 );
@@ -730,9 +811,9 @@ INSERT INTO trips (
 	6,
 	'22.07.24 - 09.08.24',
 	'Los Angeles',
-	'United States of America',
+	'Stany Zjednoczone Ameryki',
 	'Hollywood Dreaming',
-	'lorem ipsum description',
+	'Zapraszamy Cię do rezerwacji wycieczki w wyjątkowe miejsce jakim jest United States of America - Los Angeles. Podróż odbędzie się w dniach 22.07.24 - 09.08.24, co daje 18 dni niezapomnianej podróży.',
 	8,
 	300.00
 );
@@ -747,9 +828,9 @@ INSERT INTO trips (
 	8,
 	'18.09.24 - 28.09.24',
 	'Rio de Janerio',
-	'Brazil',
-	'Plata o Plomo Adventure',
-	'lorem ipsum description',
+	'Brazylia',
+	'Przygoda Plata o Plomo',
+	'Zapraszamy Cię do rezerwacji wycieczki w wyjątkowe miejsce jakim jest Brazil - Rio de Janerio. Podróż odbędzie się w dniach 18.09.24 - 28.09.24, co daje 10 dni niezapomnianej podróży.',
 	7,
 	400.00
 );
@@ -765,8 +846,8 @@ INSERT INTO trips (
 	'02.09.24 - 16.09.24',
 	'Denpasar',
 	'Bali',
-	'Hot Oceania',
-	'lorem ipsum description',
+	'Egzotyczna Oceania',
+	'Zapraszamy Cię do rezerwacji wycieczki w wyjątkowe miejsce jakim jest Bali - Denpasar. Podróż odbędzie się w dniach 02.09.24 - 16.09.24, co daje 14 dni niezapomnianej podróży.',
 	8,
 	200.00
 );
@@ -783,7 +864,7 @@ INSERT INTO trips (
 	'Kapsztad',
 	'RPA',
 	'Waka Waka Africa',
-	'lorem ipsum description',
+	'Zapraszamy Cię do rezerwacji wycieczki w wyjątkowe miejsce jakim jest RPA - Kapsztad. Podróż odbędzie się w dniach 30.06.24 - 09.07.24, co daje 9 dni niezapomnianej podróży.',
 	6,
 	250.00
 );
@@ -798,11 +879,28 @@ INSERT INTO trips (
 	14,
 	'16.10.24 - 27.10.24',
 	'Rejkiawik',
-	'Iceland',
-	'In the Footsteps of the Vikings',
-	'lorem ipsum description',
+	'Islandia',
+	'Śladami Wikingów',
+	'Zapraszamy Cię do rezerwacji wycieczki w wyjątkowe miejsce jakim jest Iceland - Rejkiawik. Podróż odbędzie się w dniach 16.10.24 - 27.10.24, co daje 11 dni niezapomnianej podróży',
 	8,
 	300.00
+);
+
+INSERT INTO trips (
+	id,accommodationid,flightdepartureid,flightarrivalid,date,
+	city,country,name,description,numberofpeople,provision
+) VALUES (
+	8,
+	8,
+	15,
+	16,
+	'16.10.24 - 27.10.24',
+	'Tokjo',
+	'Japonia',
+	'Kwitnąca Wiśnia',
+	'Zapraszamy Cię do rezerwacji wycieczki w wyjątkowe miejsce jakim jest Japonia - Tokjo. Podróż odbędzie się w dniach 23.04.25 - 03.05.25, co daje 11 dni niezapomnianej podróży',
+	2,
+	350.00
 );
 
 -- TRIP ATTRACTION
@@ -1021,4 +1119,28 @@ INSERT INTO tripattractions (
 	27,
 	7,
 	27
+);
+
+INSERT INTO tripattractions (
+	id,tripid,attractionid
+) VALUES (
+	28,
+	8,
+	28
+);
+
+INSERT INTO tripattractions (
+	id,tripid,attractionid
+) VALUES (
+	29,
+	8,
+	29
+);
+
+INSERT INTO tripattractions (
+	id,tripid,attractionid
+) VALUES (
+	30,
+	8,
+	30
 );
