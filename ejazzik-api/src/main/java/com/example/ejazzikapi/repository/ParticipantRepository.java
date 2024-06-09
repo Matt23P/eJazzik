@@ -17,6 +17,10 @@ public interface ParticipantRepository extends JpaRepository<ParticipantEntity, 
     ParticipantEntity findById(int id);
     List<ParticipantEntity> findAllByReservationId(Integer reservationId);
 
+    @Transactional
+    @Modifying
+    void deleteAllByReservationId(Integer reservationId);
+
     @Modifying
     @Transactional
     @Query("UPDATE ParticipantEntity p SET p.firstName = :#{#participant.firstName}, p.lastName = :#{#participant.lastName}, p.email = :#{#participant.email}, p.birthDate = :#{#participant.birthDate}, p.passportNumber = :#{#participant.passportNumber}, p.pesel = :#{#participant.pesel} WHERE p.participantId = :participantId")

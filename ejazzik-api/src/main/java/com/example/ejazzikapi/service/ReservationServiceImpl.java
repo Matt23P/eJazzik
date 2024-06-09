@@ -106,6 +106,7 @@ public class ReservationServiceImpl implements ReservationService{
     public StatusResponse deleteReservation(Integer id) {
         if (reservationRepository.existsById(id)) {
             try {
+                participantRepository.deleteAllByReservationId(id);
                 reservationRepository.deleteById(id);
                 logger.log(Level.INFO, "Reservation with ID " +  id + " deleted");
                 return new StatusResponse(null, true);
