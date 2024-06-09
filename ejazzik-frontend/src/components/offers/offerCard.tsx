@@ -2,16 +2,6 @@ import ArrowRightLineIcon from "@rsuite/icons/ArrowRightLine";
 import Link from "next/link";
 import matchAndReturnPhotoForTrip from "@/helpers/matchPhotoForTrip";
 
-interface Trip {
-  name: string;
-  country: string;
-  city: string;
-  date: string;
-  numberOfPeople: number;
-  pricePerPerson: number;
-  tripId: number;
-}
-
 export const OfferCard = ({ trip }: { trip: Trip }) => {
   return (
     <div
@@ -20,7 +10,7 @@ export const OfferCard = ({ trip }: { trip: Trip }) => {
     >
       <div className=" w-full h-[300px] rounded-xl text-center text-white">
         {/* @ts-ignore */}
-        {matchAndReturnPhotoForTrip(trip.country, trip.city)}
+        {matchAndReturnPhotoForTrip(trip.country, trip.city, "offerBoxImgImg")}
       </div>
       <div className="flex w-full mt-2 flex-col justify-center items-center">
         <div className="mt-2 text-lg">{trip.name}</div>
