@@ -34,8 +34,9 @@ export default function OfferComp({ trip }: { trip: Trip }) {
           {trip.numberOfPeople}, a dzięki naszym wyszukiwarkom przygotowaliśmy
           dla Ciebie wyjątkową cenę, jaką jest {trip.pricePerPerson} PLN
           <span className="font-thin text-sm">/os</span>. Łączna cena wyjazdu
-          wynosi {trip.totalPrice} PLN. W trakcie wycieczki zatrzymasz się w
-          wyjątkowym miejscu{" "}
+          {/* @ts-ignore */}
+          wynosi {parseFloat(trip.totalPrice).toFixed(2)} PLN. W trakcie
+          wycieczki zatrzymasz się w wyjątkowym miejscu{" "}
           <span className="italic">{trip.accommodation.name}</span>.
         </div>
       </div>
