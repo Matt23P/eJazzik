@@ -21,7 +21,7 @@ export default function Account() {
   return (
     <main className="relative min-h-screen flex flex-col bg-white w-full">
       <Header />
-      <div className="h-full w-full flex pt-28 justify-center items-center gap-52 max-lg:flex-col mt-[112px] mb-10 py-32">
+      <div className="h-full w-full flex pt-20 justify-center items-center gap-52 max-lg:flex-col mt-[112px] mb-10 py-32">
         <div className="flex flex-col gap-10">
           <div className="text-2xl text-center">Moje rezerwacje</div>
           <MyReservations encodedUser={encodedUser} />

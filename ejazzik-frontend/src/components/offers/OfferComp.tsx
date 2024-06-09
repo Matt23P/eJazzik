@@ -43,9 +43,9 @@ export default function OfferComp({ trip }: { trip: Trip }) {
         <div className="font-normal text-3xl mb-5 mt-5 text-black">
           Informacje o lotach
         </div>
-        <div className="flex w-full max-w-[1000px] flex-wrap gap-5 mt-5">
-          <div className="flex flex-col w-1/2 items-center justify-center">
-            <div className="text-2xl">Lot do</div>
+        <div className="flex max-sm:flex-col max-sm:justify-center max-sm:items-center w-full max-w-[1000px] flex-wrap gap-5 mt-5">
+          <div className="flex flex-col w-[45%] max-sm:w-[90%] items-center justify-center">
+            <div className="text-2xl mb-3">Lot do</div>
             <div className="flex w-full flex-col">
               <span className="text-lg">Z lotniska:</span>
               {trip.flightDeparture.airportDeparture}
@@ -73,8 +73,8 @@ export default function OfferComp({ trip }: { trip: Trip }) {
               {trip.flightDeparture.luggage}
             </div>
           </div>
-          <div className="flex flex-col w-[40%] items-center ">
-            <div className="text-2xl">Lot powrotny</div>
+          <div className="flex flex-col w-[45%] max-sm:w-[90%] items-center ">
+            <div className="text-2xl mb-3">Lot powrotny</div>
             <div className="flex w-full flex-col">
               <span className="text-lg">Z lotniska:</span>
               {trip.flightArrival.airportDeparture}

@@ -36,7 +36,6 @@ export const MyReservations = ({ encodedUser }: { encodedUser: any }) => {
         },
       )
       .then((r) => {
-        console.log(r.data.reservations);
         setReservations(r.data.reservations);
         setLoading(false);
       });
@@ -62,7 +61,7 @@ export const MyReservations = ({ encodedUser }: { encodedUser: any }) => {
 
     const mess = (
       <Notification type={"success"} header={`Sukces!`} closable>
-        <p>Hasło zostało zmienione</p>
+        <p>Anulowano rezerwacje</p>
       </Notification>
     );
 
