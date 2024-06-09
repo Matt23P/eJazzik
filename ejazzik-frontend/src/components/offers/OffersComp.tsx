@@ -25,7 +25,7 @@ export const OffersComp = () => {
   return (
     <div className="flex gap-16 flex-wrap w-[90%] max-w-[1400px] items-center justify-center">
       {trips !== null ? (
-        trips.map((t: object) => {
+        trips.map((t: Trip) => {
           return <OfferCard trip={t} />;
         })
       ) : (

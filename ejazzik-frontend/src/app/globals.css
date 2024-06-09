@@ -247,3 +247,9 @@
   box-shadow: 0 0 30px rgba(0,0,0,0.2);
   border-radius: 0.25em;
 }
+
+.offerImg{
+  max-height: 500px !important;
+  object-fit: cover !important;
+  box-shadow: 0 0 30px rgba(0,0,0,0.2);
+}
