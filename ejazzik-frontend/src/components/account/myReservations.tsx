@@ -1,6 +1,14 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Button, Loader, Modal, Notification, Panel, useToaster } from "rsuite";
+import {
+  Accordion,
+  Button,
+  Loader,
+  Modal,
+  Notification,
+  Panel,
+  useToaster,
+} from "rsuite";
 import axios from "axios";
 import ArrowRightLineIcon from "@rsuite/icons/ArrowRightLine";
 import { useRouter } from "next/navigation";
@@ -215,21 +223,22 @@ export const MyReservations = ({ encodedUser }: { encodedUser: any }) => {
               </div>
               <div className="flex flex-col gap-2">
                 <div className="text-xl mb-2">Informacje o uczestnikach</div>
-                {/*  @ts-ignore*/}
-                {chosenReservation.participants.map((p, i) => {
-                  return (
-                    <div key={i}>
-                      <div>
-                        {p.fistName} {p.lastName}
-                      </div>
-                      <div className="ml-5">Mail: {p.email}</div>
-                      <div className="ml-5">
-                        Numer paszportu: {p.passportNumber}
-                      </div>
-                      <div className="ml-5">Numer pesel: {p.pesel}</div>
-                    </div>
-                  );
-                })}
+                <Accordion className="flex flex-col w-full max-w-[1000px]">
+                  {/* @ts-ignore */}
+                  {chosenReservation.participants.map((p, i) => {
+                    return (
+                      <Accordion.Panel header={`${p.fistName} ${p.lastName}`}>
+                        <div className="flex flex-col w-full">
+                          <div className="ml-5">Mail: {p.email}</div>
+                          <div className="ml-5">
+                            Numer paszportu: {p.passportNumber}
+                          </div>
+                          <div className="ml-5">Numer pesel: {p.pesel}</div>
+                        </div>
+                      </Accordion.Panel>
+                    );
+                  })}
+                </Accordion>
               </div>
               <div className="flex gap-4">
                 <a
