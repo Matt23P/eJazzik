@@ -28,6 +28,7 @@ import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -192,10 +193,16 @@ public class Mapper {
     private double getTotalTripPrice(FlightEntity flightArrivalEntity, FlightEntity flightDepartureEntity,
                               AccommodationEntity accommodationEntity, List<AttractionEntity> attractionEntities) {
         double attractionsPricePerPersona = 0;
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+        LocalDate arrival = LocalDate.parse(flightArrivalEntity.getDateArrival(), formatter);
+        LocalDate departure = LocalDate.parse(flightDepartureEntity.getDateArrival(), formatter);
+        long daysBetween = ChronoUnit.DAYS.between(departure, arrival);
+        int daysBetweenInt = (int) daysBetween;
+
         for (AttractionEntity attraction : attractionEntities) {
             attractionsPricePerPersona += attraction.getPrice();
         }
         return attractionsPricePerPersona + flightArrivalEntity.getPrice() +
-                flightDepartureEntity.getPrice() + accommodationEntity.getPrice();
+                flightDepartureEntity.getPrice() + (accommodationEntity.getPrice() * daysBetweenInt);
     }
 }
